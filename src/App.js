@@ -1,10 +1,17 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {Redirect, Route, Switch} from "react-router-dom";
+
+import Login from "./components/login/login";
+import SignUpMain from "./components/signup/signupMain";
+
 function App() {
   return (
     <div className="App">
-      <h1>PECedIN</h1>
-      
+      <Switch>
+        <Route path = "/login" exact component={Login}/>
+        <Route path = "/signup" exact component={SignUpMain}/>
+        <Redirect to="/"/>
+      </Switch>
     </div>
   );
 }
