@@ -1,0 +1,135 @@
+/*-----------------------------------------------------------------*/
+        /*--------------NAVBAR------------------------*/
+
+/* ------------------------------------- */
+/* ------------------------------------- */
+/* ----Navbar---- */
+/* Page Navigation menu */
+.header__section{
+    text-align: left;
+    padding-right: 1.4rem;
+    padding-bottom: 8px;
+    background-color:#95BCDD;
+}
+.page__Navigation{
+    width:100%;
+    z-index: 100;
+    padding-left:2rem;
+    padding-right:1rem;
+    
+}
+/* Company Branding Navbar */
+#CompanyImage{
+    width:95px;
+    height:95px;
+    transform: scale(1.8);
+    margin-left: 1rem;
+    margin-top:2rem;
+    padding: 0px;
+}
+
+/******************************************/
+/*--    NAVBAR Finishes --*/
+
+/******************************/
+/*--Footer--*/
+
+footer{
+    display: block;
+    padding-top:2rem;
+}
+
+.footerSection
+{   
+    background-color:#f0f3f5;
+    /* background-color: #f9f9f9; */
+    /*color:#bbb;*/
+    /* color:#5e5e5e; */
+    color: #3aa6d1;
+    padding:2rem;
+    font-size: 10 rem;   
+    border-top-color: black;
+    text-align: center;
+    
+    
+}
+.footerSectionInner{
+    margin-top:2rem;
+    text-align: center;
+}
+.footerColumn{
+    padding:8px auto;
+    margin-bottom:1.5rem; 
+    text-align: center;
+    
+}
+.footerColumnicons{
+    text-align: center;
+}
+.footerHeading{
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+    font-weight: 400;
+    background-image: -webkit-gradient(linear, left top, right top, from(var(--color-blue-violet-light)), to(var(--color-primary-violet)));
+    background-image: linear-gradient(to right, var(--color-blue-violet-light),var(--color-primary-violet));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    
+}
+.footerSection p{
+    text-align: center;
+    margin-top: 10px;
+}
+#address{
+margin-left: 1rem;
+padding-right:15px;
+
+}
+.contact_icons{
+    font-size:1.3rem;
+    margin-left:1rem;
+    margin-right:5px;
+}
+.social_icons{
+    font-size: 1.6rem;
+    margin-left: 1rem;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    overflow: hidden;
+    padding-top: -10px;
+}
+.social_links{
+    text-decoration: none !important;
+    padding-bottom:7px;
+    padding-top:12px;
+    padding-right: 10px;
+    color: rgb(24, 23, 23);
+}
+.social_links:hover{
+    background-color:var(--color-grey);
+    
+}
+
+.facebook{
+    color:#3b5998 ;
+}
+.linkedIn{
+    color: #0e76a8
+}
+.twitter{
+    color:#00acee;
+}
+.instagram{
+    color:#00acee ;
+}
+
+.social_icons svg{
+    background-color: rgb(218, 227, 230);
+    box-shadow: #aaa 1.5px -1.5px;
+}
+
+.footerContent{
+    text-align: center;
+}
