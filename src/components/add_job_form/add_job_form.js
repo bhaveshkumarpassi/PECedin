@@ -28,6 +28,8 @@ class Add_Job extends Component {
         }
     }
 
+
+      
     formValidation = () =>{
         const{company_Name,description,Profile,Branch,CGPA,Type,Stipend,Timeline} = this.state;
         let company_NameError="", descriptionError = "", ProfileError="", BranchError="",CGPAError="",TypeError="",StipendError="",TimelineError="", error;
@@ -107,6 +109,10 @@ class Add_Job extends Component {
                                 <Form.Label><span className="form__icon"></span>Choose Branch</Form.Label>
                                 <div><Select isMulti name="category" options={branch} className="basic-multi-select" value={this.state.Branch} onChange={this.handleMultiSelectChange} classNamePrefix="select"/></div>
                                     <div className="invalid__feedback">{this.state.errors.BranchError}</div>
+                                </Form.Group>
+                                <Form.Group controlId="exampleForm.ControlTextarea1">
+                                <Form.Label>Example textarea</Form.Label>
+                                <Form.Control as="textarea" rows={3} />
                                 </Form.Group>
                                 <Form.Group controlId="formBasicEmail">
                                 <Form.Label><span className="form__icon"></span>Timeline</Form.Label>

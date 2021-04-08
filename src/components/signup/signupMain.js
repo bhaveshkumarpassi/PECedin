@@ -15,7 +15,10 @@ const SignUpMain = ()=>{
 
     return <div className="SignupDiv">
     {content}
-    <Button onClick={clickHandler}>Submit</Button>
+    <Button onClick={clickHandler} style={{
+        background : "#495867",
+        color : "#F7F7FF"
+    }} >Submit</Button>
     </div>
 
 }

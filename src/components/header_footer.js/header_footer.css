@@ -28,6 +28,104 @@
     padding: 0px;
 }
 
+.nav--sticky{
+    position:fixed;
+    position:fixed;
+    top:0;
+    background-color:#95BCDD;
+}
+
+/* Company Branding Navbar */
+
+
+.brand__title__name{
+    font-size: 1.4rem;
+    display: inline-block;
+    padding:2rem 1rem;
+    color: var(--color-primary-blue);
+}
+
+@media screen and (max-width: 700px){
+    #CompanyImage{
+        margin-right:8px;
+        transform:scale(0.8);
+        margin-top: .6rem;
+        border-radius: 0.75rem;
+        background-color: #d9e4dd;
+        border-bottom: 3px solid #1b262c;
+    } 
+    #CompanyTitle{
+        font-size: 80%;
+    }
+}
+@media screen and (max-width: 350px){
+    .brand__title__name{
+        padding:2rem 0rem;
+    }
+    .navbar-brand{
+        transform: scale(0.8);
+    }
+
+}
+
+.nav-link{
+    height:58px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.nav-link:hover{
+    background-color: #a5ecd7;
+    border-bottom: 3px solid var(--color-secondary-blue);
+}
+
+
+.NavLink{
+    margin-left: 5px;
+    margin-right: 8px;
+    font-size: 1.1rem;
+    color: #4b4b4b;
+    opacity: 1;
+}
+@media screen and (max-width: 1100px){
+    .NavLink{
+        font-size:1rem;
+        margin-left: 0px;
+        margin-right: 0px;
+
+    }
+}
+@media screen and (max-width: 992px){
+    .NavLink{
+        display: inline-block;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+
+    }
+}
+#basic-nav-dropdown{
+    color:#4b4b4b;
+    padding-left: .6rem;
+    font-size: 1.1rem;
+}
+.dropdown-item:hover{
+    background-color: #ddd;
+}
+.dropdown-item{
+    margin-top: 0.75rem;
+    margin-bottom:0.75rem;
+}
+.dropdown-item{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+.dropdown_nav-link{
+    color: black;
+}
+.dropdown_nav-link:hover{
+    color:black;
+}
 /******************************************/
 /*--    NAVBAR Finishes --*/
 
