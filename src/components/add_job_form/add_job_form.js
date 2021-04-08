@@ -34,8 +34,19 @@ class Add_Job extends Component {
                                 <Form.Label><span className="form__icon"></span>Title</Form.Label>
                                     <input name="title" className="form-control" type="text"  placeholder="Type the Company Name." />
                                 </Form.Group>
-
+                                <Form.Group controlId="formBasicEmail">
+                                <Form.Label><span className="form__icon"></span>Profile</Form.Label>
+                                    <input name="profile" className="form-control" type="text"  placeholder="Mention the Profile Name" />
+                                </Form.Group>
                                 <Form.Group controlId="exampleForm.ControlSelect1">
+                                <Form.Label>Category</Form.Label>
+                                <Form.Control as="select">
+                                   <option>Select</option>
+                                   <option>Placement</option>
+                                   <option>Full-Time</option>
+                                </Form.Control>
+                                </Form.Group>
+                                <Form.Group controlId="exampleForm.ControlSelect">
                                 <Form.Label>Branch</Form.Label>
                                 <Form.Control as="select">
                                    <option>Select</option>
@@ -49,6 +60,19 @@ class Add_Job extends Component {
                                    <option>Mechanical Engineering</option>
                                 </Form.Control>
                                 </Form.Group>
+                                <Form.Group controlId="exampleForm.ControlTextarea1">
+                                <Form.Label>Description</Form.Label>
+                                <Form.Control as="textarea" placeholder="Tell us more about Job description" rows={3} />
+                                </Form.Group>
+                                <Form.Group controlId="formBasicEmail">
+                                <Form.Label><span className="form__icon"></span>CGPA</Form.Label>
+                                    <input name="CGPA" className="form-control" type="number"  placeholder="Mention the CGPA Criteria if any" />
+                                </Form.Group>
+                                <Form.Group controlId="formBasicEmail">
+                                <Form.Label><span className="form__icon"></span>CTC(Cost To Company)</Form.Label>
+                                    <input name="CTC" className="form-control" type="text"  placeholder="Mention the CTC" />
+                                </Form.Group>
+                                
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Description</Form.Label>
                                 <Form.Control as="textarea" placeholder="Tell us more about Job description" rows={3} />
