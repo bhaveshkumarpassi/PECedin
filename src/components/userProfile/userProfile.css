@@ -1,0 +1,42 @@
+.userProfileDiv{
+    width: 90%;
+    margin : 5%;
+    box-shadow: 0 0 4px #577399;
+    padding: 2%;
+    border-radius: 3px;
+}
+
+.userResume{
+    width : 718px;
+    height : 700px; 
+    margin-top: 2%;
+}
+
+.userInfoDiv{
+    width: 90%;
+    margin: 2% 5% 2% 5%;
+}
+
+.userDP{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    padding: 5px;
+    box-shadow: 0 0 2px black;
+}
+
+.EditButton{
+    background-color: #FE5F55;
+    width: 65px;
+    height: 65px;
+    color: #F7F7FF;
+    border-radius: 65px;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 5px;
+    box-shadow: 0 0 2px #FE5F55;
+}
+
+.EditButton:hover{
+    box-shadow : 0 0 5px #577399;
+}

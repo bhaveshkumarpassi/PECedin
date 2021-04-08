@@ -1,6 +1,6 @@
 import React from "react";
 import {Row, Col, FormGroup, Form, Input, Button, Label} from "reactstrap";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import "./login.css";
 // import LoginCorousel from  "./loginCorousel";
 
@@ -25,10 +25,10 @@ const Login = ()=>{
                     </FormGroup>
                 </Form>
                 <Button style={{
-                    background : "#577399",
+                    background : "#495867",
                 }}>Login</Button>
                 </div></Row>
-            <Row><div className="LoginDiv2"><center>Don't have an account? <Link to="/signup">Sign up</Link></center></div></Row>
+            <Row><div className="LoginDiv2"><center>Don't have an account? <NavLink to="/signup" className="LoginDiv2Navlink" >Sign up</NavLink></center></div></Row>
             </Col>
         </Row>
     </div>
