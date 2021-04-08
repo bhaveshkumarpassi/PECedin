@@ -35,8 +35,10 @@
     padding-top: 10px;
     padding-left: 5px;
     box-shadow: 0 0 2px #FE5F55;
+    align-items: right;
 }
 
 .EditButton:hover{
     box-shadow : 0 0 5px #577399;
+    cursor: pointer;
 }

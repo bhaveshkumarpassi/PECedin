@@ -1,15 +1,20 @@
 import React , {useState} from "react";
-import {TabContent, TabPane, Nav, NavItem, NavLink} from "reactstrap";
+import {TabContent, TabPane, Nav, NavItem, NavLink, Modal} from "reactstrap";
 import classnames from 'classnames';
 import "./userProfile.css";
 
 import resume from "../../assets/sampleResume.pdf";
 import UserInfo from "./userInfo";
+import {FaRegEdit} from "react-icons/fa";
+import ProfileEdit from "./ProfileEdit";
 
 const UserProfile = ()=>{
 
     const [activeTab, setActiveTab] = useState('1');
     const toggle = tab => {if(activeTab !== tab) setActiveTab(tab);}
+
+    const [modal, setModal] = useState(false);
+    const toggleModal = () => setModal(!modal);
 
     return <div className="userProfileDiv">
         <Nav tabs>
@@ -24,6 +29,7 @@ const UserProfile = ()=>{
             onClick={() => { toggle('2'); }}>
             Uploaded Resume
           </NavLink></NavItem>
+          
       </Nav>
 
       <TabContent activeTab={activeTab}>
@@ -34,7 +40,8 @@ const UserProfile = ()=>{
       <center><object type="application/pdf" data={resume} className="userResume" >User Resume</object></center>
       </TabPane>
       </TabContent>
-        
+      <div className="EditButton" onClick={toggleModal}><FaRegEdit size="40px"/></div>
+      <Modal isOpen={modal} toggle={toggleModal}><ProfileEdit/></Modal>
     </div>
 }
 
