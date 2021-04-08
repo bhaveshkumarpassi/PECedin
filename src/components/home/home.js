@@ -70,7 +70,6 @@ class Home extends Component {
     render(){
         return(
             <div>
-            <Header/>
                 <div className="container jobs">
                     <div className='row justify-content-center mt-3'>
                         <h2 style={{textAlign: 'center', textShadow: '0 0 3px #FF0000'}}>ALL JOB OPENINGS</h2>
@@ -79,7 +78,6 @@ class Home extends Component {
                         {this.renderCardList()}
                     </div>
                 </div>
-            <Footer/>
             </div>
         );
     }

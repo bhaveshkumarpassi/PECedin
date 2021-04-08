@@ -7,17 +7,21 @@ import Footer from "./components/header_footer.js/footer";
 import UserProfile from "./components/userProfile/userProfile";
 import Home from './components/home/home';
 import JobDetail from './components/job/job';
+import Add_Job from "./components/add_job_form/add_job_form";
 
 function App() {
   return (
     <div className="App">
        <Header />
-          <Switch>
-            <Route path = "/login" exact component={Login}/>
-            <Route path = "/signup" exact component={SignUpMain}/>
-            <Route path = "/user" exact component={UserProfile}/>
-            <Redirect to="/"/>
-          </Switch>
+      <Switch>
+        <Route path = "/login" exact component={Login}/>
+        <Route path = "/signup" exact component={SignUpMain}/>
+        <Route path = "/user" exact component={UserProfile}/>
+        <Route path ="/addJob" exact component={Add_Job} />
+        <Route path = "/Home" exact component={Home} />
+        <Route path = "/Home/:jobId" exact component={JobDetail} />
+        <Redirect to="/Home" />
+      </Switch>
       <Footer /> 
     </div>
   );
