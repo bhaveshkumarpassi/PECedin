@@ -6,6 +6,7 @@ import SignUpMain from "./components/signup/signupMain";
 import Header from "./components/header_footer.js/header";
 import Footer from "./components/header_footer.js/footer";
 import UserProfile from "./components/userProfile/userProfile";
+import Add_Job from "./components/add_job_form/add_job_form";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path = "/login" exact component={Login}/>
         <Route path = "/signup" exact component={SignUpMain}/>
         <Route path = "/user" exact component={UserProfile}/>
+        <Route path ="/addjob" exact component={Add_Job} />
         <Redirect to="/"/>
       </Switch>
       <Footer /> 
