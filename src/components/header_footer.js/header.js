@@ -19,20 +19,20 @@ class header extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto LeftNav">
-                            <Link to="/" className="nav-link"><span className="NavLink"><span className="fa fa-home fa-lg"></span>Home</span></Link>
+                            <Link to="/" className="navbar-link"><span className="NavBarLink"><span className="fa fa-home fa-lg"></span>Home</span></Link>
 
                             {/* <Link to="#" className="nav-link"><span className="NavLink">Categories</span></Link> */}
-                            <Link to="#" className="nav-link"><span className="NavLink"><span class="fa fa-list fa-lg"></span>Jobs Applied</span></Link>
-                            <Link to="#" className="nav-link"><span className="Navlink"><span class="fa fa-address-card fa-lg"></span>Interested Jobs</span></Link>
-                            <Link to="/register" className="nav-link"><span className="NavLink"><span className="fa fa-plus-circle fa-lg"></span>Add Job</span></Link>
-                            <Link to="#" className="nav-link"><span className="NavLink"><span class="fa fa-info-circle fa-lg"></span>About Us</span></Link>
+                            <Link to="#" className="navbar-link"><span className="NavBarLink"><span class="fa fa-list fa-lg"></span>Jobs Applied</span></Link>
+                            <Link to="#" className="navbar-link"><span className="NavBarLink"><span class="fa fa-address-card fa-lg"></span>Interested Jobs</span></Link>
+                            <Link to="/register" className="navbar-link"><span className="NavBarLink"><span className="fa fa-plus-circle fa-lg"></span>Add Job</span></Link>
+                            <Link to="#" className="navbar-link"><span className="NavBarLink"><span class="fa fa-info-circle fa-lg"></span>About Us</span></Link>
                             
                             <NavDropdown.Divider />
                         </Nav>
 
                         <Nav className="ml-auto RightNav">
                             {/* if user is logged in then we willshow only this */}
-                            <button to="/register" className="nav-link" ><span className="NavLink"><span className="fa fa-sign-in fa-lg">Login</span></span></button>
+                            <button to="/register" className="navbar-link" ><span className="NavBarLink"><span className="fa fa-sign-in fa-lg">Login</span></span></button>
                             {/* otherwise */}
                             
                         </Nav>
