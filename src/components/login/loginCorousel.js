@@ -4,15 +4,15 @@ import {
 
 const items = [
   {
-    src : "",
+    src : "https://images.shiksha.com/mediadata/images/1488191373php5kGBoN.jpeg",
     altText : "Slide 1"
   },
   {
-    src : "",
+    src : "https://getmyuni.azureedge.net/college-image/big/punjab-engineering-college-university-of-technology-pec-chandigarh.jpg",
     altText: 'Slide 2',
   },
   {
-    src : "",
+    src : "https://www.marketingmind.in/wp-content/uploads/2019/06/yes-700x367.png",
     altText: 'Slide 3',
   },
 

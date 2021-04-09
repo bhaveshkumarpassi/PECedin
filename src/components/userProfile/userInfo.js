@@ -1,7 +1,8 @@
 import React from "react";
 import {SampleUser} from "./sampleUser";
-import {Row, Col} from "reactstrap";
+import {Row, Col, Card, CardBody, CardTitle, CardFooter} from "reactstrap";
 import {VscActivateBreakpoints} from "react-icons/vsc";
+import user from "../../assets/user.png";
 
 const UserInfo = ()=>{
         return <div className="userInfoDiv" >
@@ -13,9 +14,18 @@ const UserInfo = ()=>{
                     <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> CGPA : </div><div className="InfoValue">{SampleUser.cgpa}</div></Row>
                     <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> E-Mail : </div><div className="InfoValue">{SampleUser.email}</div></Row>
                     <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> Job / Internship Preferences : </div></Row>
-                    <Row>{SampleUser.preferences.map((p, index)=>{})}</Row>
+                    <div className="PreferenceCardsDiv"><Row>{SampleUser.preferences.map((p, index)=>{
+                        return <Card key={index} className="PreferenceCards">
+                            <CardBody>
+                                <CardTitle>{p.logo}  {p.name}</CardTitle>
+                            </CardBody>
+                            <CardFooter style={{
+                                backgroundColor : "#577399"
+                            }}></CardFooter>
+                        </Card>
+                    })}</Row></div>
                 </Col>
-                <Col lg="4"><img src={SampleUser.image} className="userDP"/></Col>
+                <Col lg="4"><center><img src={user} className="userDP"/></center></Col>
             </Row>
             
         </div>
