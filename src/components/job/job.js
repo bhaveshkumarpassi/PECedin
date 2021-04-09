@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import { Card, Button, FormGroup, Label, Input, CardHeader, CardFooter,
-    CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardSubtitle, CardText, CardImg, ButtonGroup} from 'reactstrap';
+import { Card, Button, CardHeader, CardFooter,
+ CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
 import Header from '../header_footer.js/header';
 import Footer from '../header_footer.js/footer';
-import SDE from '../../images/sde.jpg'
 import './job.css'
 
 const data = [

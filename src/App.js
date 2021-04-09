@@ -8,6 +8,7 @@ import UserProfile from "./components/userProfile/userProfile";
 import Home from './components/home/home';
 import JobDetail from './components/job/job';
 import Add_Job from "./components/add_job_form/add_job_form";
+import Aboutus from "./components/aboutUs/aboutUs";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path ="/addJob" exact component={Add_Job} />
         <Route path = "/Home" exact component={Home} />
         <Route path = "/Home/:jobId" exact component={JobDetail} />
+        <Route path="/aboutUs" exact component={Aboutus} />
         <Redirect to="/Home" />
       </Switch>
       <Footer /> 

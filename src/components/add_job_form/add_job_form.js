@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import {Container, Row, Col,Button,FormLabel,FormGroup} from 'react-bootstrap';
+import {Container, Row, Col,Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Jumbotron } from "reactstrap";
 import Form from 'react-bootstrap/Form';
-import Select from 'react-select'
 import './add_job_form.css';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class Add_Job extends Component {
