@@ -1,15 +1,7 @@
-import React, {useState} from "react";
-
+import React from "react";
 
 const ProfileEdit = ()=>{
-    const [timeline, AddToTimeline] = useState([{"":null}]);
-    
-    return <div>
-        <Row>
-            <Col></Col>
-            <Col></Col>
-        </Row>
-    </div>
+    return <div></div>;
 }
 
 export default ProfileEdit;
