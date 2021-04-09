@@ -12,7 +12,8 @@ const UserInfo = ()=>{
                     <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> Branch : </div><div className="InfoValue">{SampleUser.branch}</div></Row>              
                     <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> CGPA : </div><div className="InfoValue">{SampleUser.cgpa}</div></Row>
                     <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> E-Mail : </div><div className="InfoValue">{SampleUser.email}</div></Row>
-
+                    <Row><div className="InfoKey"><VscActivateBreakpoints size="25px"/> Job / Internship Preferences : </div></Row>
+                    <Row>{SampleUser.preferences.map((p, index)=>{})}</Row>
                 </Col>
                 <Col lg="4"><img src={SampleUser.image} className="userDP"/></Col>
             </Row>

@@ -6,5 +6,5 @@ export const SampleUser = {
     email : "nisha.bt19cse@pec.edu.in",
     password : "random",
     image : "https://lh3.googleusercontent.com/proxy/nyZm2LFh9xt25TQI515oAt0aS_5xZrvDnw4gXdworE93gkMqJ1D3PEZzBoBmh_yf12ubiyfAIiM-ADI5Pis85VNzHM9WdHRr0VoERl6-ByFASy8",
-    interests : ["Finance", "Software Developer", "Data Science"],
+    preferences : ["Finance", "Software Developer", "Data Science"],
 };
