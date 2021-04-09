@@ -1,9 +1,10 @@
 .SignupDiv{
-    margin : 5% 15% 5% 15%;
-    width: 70%;
+    
+    width: 100%;
     box-shadow: 0 0 2px #495867;
     padding: 5%;
     background-color: #577399;
+    opacity: 0.8;
     color : #F7F7FF;
 }
 

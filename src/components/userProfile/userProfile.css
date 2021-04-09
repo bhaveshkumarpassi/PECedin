@@ -1,20 +1,21 @@
 .userProfileDiv{
-    width: 90%;
-    margin : 5%;
+    width: 80%;
+    margin : 5% 10% 5% 10%;
     box-shadow: 0 0 4px #577399;
     padding: 2%;
     border-radius: 3px;
 }
 
 .userResume{
-    width : 718px;
-    height : 700px; 
+    width : 70%;
+    height: 700px;
     margin-top: 2%;
 }
 
 .userInfoDiv{
     width: 90%;
-    margin: 2% 5% 2% 5%;
+    margin: 5% 5% 5% 5%;
+    height: 700px;
 }
 
 .userDP{
@@ -23,6 +24,7 @@
     border-radius: 200px;
     padding: 5px;
     box-shadow: 0 0 2px black;
+    margin-left: 16%;
 }
 
 .EditButton{
@@ -35,8 +37,21 @@
     padding-top: 10px;
     padding-left: 5px;
     box-shadow: 0 0 2px #FE5F55;
+    align-items: right;
 }
 
 .EditButton:hover{
     box-shadow : 0 0 5px #577399;
+    cursor: pointer;
+}
+
+.InfoKey{
+    font-size: 25px;
+    color: #577399;
+}
+
+.InfoValue{
+    color: #495867;
+    font-size: 25px;
+    margin-left: 3%;
 }
