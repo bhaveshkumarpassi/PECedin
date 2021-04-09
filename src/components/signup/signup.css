@@ -1,19 +1,55 @@
 .SignupDiv{
-    
     width: 100%;
     box-shadow: 0 0 2px #495867;
     padding: 5%;
-    background-color: #577399;
-    opacity: 0.8;
-    color : #F7F7FF;
+    background-color: #F7F7FF;
+    opacity: 0.95;
+    color : #265279;
+    overflow: scroll;
+    border-radius: 3px;
+}
+
+
+
+.SignupDivLabel{
+    font-weight: 700;
+    font-size: 17px;
 }
 
 .signupImgInput{
-    margin-left: 25%;
     width: 150px;
     height: 150px;
     box-shadow: 0 0 1px black;
     border-radius: 150px;
     padding: 5px;
     background-color: white;
+    margin-top: 2%;
+}
+
+.SignUp1Div{
+    height: 430px;
+    overflow: scroll;
+}
+
+
+.SignUp2Div{
+    padding : 5%;
+    height: 430px;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+@media (max-width : 800px) {
+    .SignUp2Div{
+        padding: 10%;
+    }
+}
+
+.profileOptionContainer{
+    color: black;
+    padding: 3px;
+}
+
+.profileOptionContainer:hover{
+    color: #265279;
 }

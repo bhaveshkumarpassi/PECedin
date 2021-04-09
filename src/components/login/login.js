@@ -2,10 +2,16 @@ import React from "react";
 import {Row, Col, FormGroup, Form, Input, Button, Label} from "reactstrap";
 import {NavLink} from "react-router-dom";
 import "./login.css";
+// import loginBG from "../../assets/loginBG.jpg";
 // import LoginCorousel from  "./loginCorousel";
+import signupBG from "../../assets/signupBG.jpg";
 
 const Login = ()=>{
-    return <div>
+    return <div style={{
+        backgroundImage : `url(${signupBG})`,
+        backgroundSize : "cover",
+        padding : "5%"
+    }}>
         <Row>
             {/* <Col lg="7"><LoginCorousel/></Col> */}
             <Col lg="7" ></Col>

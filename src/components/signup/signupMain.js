@@ -5,6 +5,7 @@ import SignUp2 from "./signup2";
 import signupBG from "../../assets/signupBG.jpg";
 import "./signup.css";
 
+
 const SignUpMain = ()=>{
     const [stage, changeStage] = useState(true);
     const clickHandler = ()=>{
@@ -23,7 +24,7 @@ const SignUpMain = ()=>{
     {content}
     <Button onClick={clickHandler} style={{
         background : "#495867",
-        color : "#F7F7FF"
+        color : "#F7F7FF",
     }} >Submit</Button>
     </div></div>
 

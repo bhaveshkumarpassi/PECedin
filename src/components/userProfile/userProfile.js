@@ -7,6 +7,7 @@ import resume from "../../assets/sampleResume.pdf";
 import UserInfo from "./userInfo";
 import {FaRegEdit} from "react-icons/fa";
 import ProfileEdit from "./ProfileEdit";
+import profileBG from "../../assets/profileBG.jpg";
 
 const UserProfile = ()=>{
 
@@ -16,7 +17,13 @@ const UserProfile = ()=>{
     const [modal, setModal] = useState(false);
     const toggleModal = () => setModal(!modal);
 
-    return <div className="userProfileDiv">
+    return <div style={{
+        // backgroundColor : "red",
+        backgroundImage : `url(${profileBG})`,
+        padding : "5% 10% 5% 10%",
+        height: "100%",
+        backgroundSize : "cover"
+    }}><div className="userProfileDiv">
         <Nav tabs>
         <NavItem><NavLink
             className={classnames({ active: activeTab === '1' })}
@@ -42,7 +49,7 @@ const UserProfile = ()=>{
       </TabContent>
       <div className="EditButton" onClick={toggleModal}><FaRegEdit size="40px"/></div>
       <Modal isOpen={modal} toggle={toggleModal}><ProfileEdit/></Modal>
-    </div>
+    </div></div>
 }
 
 
