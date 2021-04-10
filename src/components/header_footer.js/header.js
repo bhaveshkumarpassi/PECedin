@@ -21,9 +21,9 @@ class header extends Component {
                         <Nav className="ml-auto LeftNav">
                             <Link to="/Home" className="navbar-link mr-4" style={{ textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span className="fa fa-home fa-lg mr-2"></span>HOME</span></Link>
                             <Link to="/Job" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-check fa-lg mr-2"></span>APPLIED JOBS</span></Link>
-                            <Link to="#" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-bookmark fa-lg mr-2"></span>INTERESTED JOBS</span></Link>
+                            <Link to="/user" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-bookmark fa-lg mr-2"></span>INTERESTED JOBS</span></Link>
                             <Link to="/register" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span className="fa fa-plus-circle fa-lg mr-2"></span>ADD JOB</span></Link>
-                            <Link to="#" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-info-circle fa-lg mr-2"></span>ABOUT US</span></Link>
+                            <Link to="/login" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-info-circle fa-lg mr-2"></span>ABOUT US</span></Link>
                             
                             <NavDropdown.Divider />
                         </Nav>
