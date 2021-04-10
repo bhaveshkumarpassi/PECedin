@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import { Card, Button, FormGroup, Label, Input,
     CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardSubtitle, CardText, CardImg} from 'reactstrap';
 import {Link} from 'react-router-dom';
-import Header from '../header_footer.js/header';
-import Footer from '../header_footer.js/footer';
+// import Header from '../header_footer.js/header';
+// import Footer from '../header_footer.js/footer';
 import SDE from '../../images/sde.jpg'
 import './home.css'
+
+import {connect} from "react-redux";
+import * as actions from "../../redux/actions/jobActions";
 
 const data = [
     {id: 0, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k"},
@@ -23,6 +26,11 @@ class Home extends Component {
 
     constructor(props){
         super(props);
+    }
+
+    componentDidMount(){
+        console.log("hello")
+        this.props.loadJobs()
     }
 
     RenderMenuItem = (job)=>{
@@ -84,4 +92,14 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state)=>{
+    return {}
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        loadJobs : ()=>dispatch(actions.fetchAllJobs())
+    }
+}
+
+export default connect( mapStateToProps, mapDispatchToProps )(Home);
