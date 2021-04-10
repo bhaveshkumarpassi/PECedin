@@ -22,7 +22,7 @@ class header extends Component {
                             <Link to="#" className="navbar-link" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-check fa-lg mr-2"></span>APPLIED JOBS</span></Link>
                             <Link to="#" className="navbar-link" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-bookmark fa-lg mr-2"></span>INTERESTED JOBS</span></Link>
                             <Link to="/addJob" className="navbar-link" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span className="fa fa-plus-circle fa-lg mr-2"></span>ADD JOB</span></Link>
-                            <Link to="#" className="navbar-link" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-info-circle fa-lg mr-2"></span>ABOUT US</span></Link>
+                            <Link to="/aboutUs" className="navbar-link" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-info-circle fa-lg mr-2"></span>ABOUT US</span></Link>
                             
                             <NavDropdown.Divider />
                         </Nav>

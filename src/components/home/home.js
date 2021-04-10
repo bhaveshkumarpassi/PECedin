@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Card, Button, 
     CardTitle, CardBody, CardSubtitle, CardImg} from 'reactstrap';
-import bg from "../../assets/bg.jpg";
 import SDE from '../../images/sde.jpg'
 import './home.css'
 
@@ -68,12 +67,7 @@ class Home extends Component {
 
     render(){
         return(
-            <div style={{
-                backgroundImage : `url(${bg})`,
-                backgroundSize : "cover",
-                height : "100%",
-                padding : "5% 15% 5% 15%"
-            }}>
+            
             <div>
                 <div className="container jobs">
                     <div className='row justify-content-center mt-3'>
@@ -83,7 +77,6 @@ class Home extends Component {
                         {this.renderCardList()}
                     </div>
                 </div>
-            </div>
             </div>
         );
     }
