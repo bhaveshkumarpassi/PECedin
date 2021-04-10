@@ -5,8 +5,11 @@ import {Profiles} from "../../assets/profiles";
 import {Branches} from "../../assets/Branches";
 import {IoAddOutline} from "react-icons/io5";
 import jobFormBG from "../../assets/jobFormBG.jpg";
+import {connect} from "react-redux";
+import * as jobActions from "../../redux/actions/jobActions";
 
-const Add_Job = ()=>{
+
+const Add_Job = (props)=>{
 
     const [job, setJob] = useState({
         companyName : "",
@@ -155,10 +158,17 @@ const Add_Job = ()=>{
         </Row>
       <Button onClick={()=>{
           console.log(job)
+          props.addJob(job);
       }} >ADD JOB</Button>
       </div>
     </div>
 }
 
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        addJob : (job)=>dispatch(jobActions.addJob(job))
+    }
+}
 
-export default Add_Job;
+
+export default connect(null, mapDispatchToProps)(Add_Job);
