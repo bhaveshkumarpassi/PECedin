@@ -5,6 +5,7 @@ import { Breadcrumb, BreadcrumbItem, Jumbotron } from "reactstrap";
 import Form from 'react-bootstrap/Form';
 import './add_job_form.css';
 import 'react-toastify/dist/ReactToastify.css';
+import signupBG from "../../assets/addJob.jpg";
 
 class Add_Job extends Component {
 
@@ -14,6 +15,11 @@ class Add_Job extends Component {
       
     render(){
         return(
+             <div style={{
+                backgroundImage : `url(${signupBG})`,
+                backgroundSize : "cover",
+                padding : "5%"
+            }}>
             <div className="forms__section">
             <Container>
             <Col md={12} className="contact__main__content">
@@ -86,6 +92,7 @@ class Add_Job extends Component {
             
             </Col>
             </Container>
+      </div>
       </div>
         )
     }
