@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter,
-    CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardSubtitle, CardText, CardImg, ButtonGroup} from 'reactstrap';
-import profile_pic from '../../images/profile_pic.png'
+import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter, Jumbotron,
+    CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
+import profile_pic from '../../images/profile_pic.png';
+import { LocalForm, Control, Errors } from "react-redux-form";
 import Header from '../header_footer.js/header';
 import Footer from '../header_footer.js/footer';
 import SDE from '../../images/sde.jpg'
@@ -19,7 +20,7 @@ const data = [
 
 ]
 
-const commentsArray = [
+const comments = [
     {_id: 0, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
     {_id: 1, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
     {_id: 2, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
@@ -29,58 +30,83 @@ const commentsArray = [
 
 ];
 
-const renderComments = () => {
+const RenderComments = () => {
 
     return(
 
-        <ul className="list-unstyled">
-              {commentsArray.length ? (
-                commentsArray
-                  .map((comm) => {
+        <div style={{marginLeft: '3%', marginRight: '3%'}}>
+            <LocalForm >
+                <div className="row form-group">
+                    <Label htmlFor="comment" className="col-12">
+                    <span className="fa fa-lg  fa-pencil-square-o ml-1 mr-2"></span>
+                        Post Query
+                    </Label>
+                    <div className="col-12">
+                    <Control.textarea
+                        model=".comment"
+                        name="comment"
+                        className="form-control"
+                        id="comment"
+                        rows="3"
+                        placeholder={"Type your query here ...."}
+                    />
+                    <Errors
+                        className="text-danger"
+                        show="touched"
+                        model=".comment"
+                        messages={{
+                        required: "Required",
+                        maxLength: "Must be 500 characters or less",
+                        }}
+                    />
+                    </div>
+                </div>
+                <div className="row form-group">
+                    <div className="col-12">
+                    <Button type="submit" style={{backgroundColor: '#FE5F55'}}>
+                        Submit
+                    </Button>
+                    </div>
+                </div>
+            </LocalForm>
+            <ul className="ml-2 list-unstyled mr-2">
+                {comments.map((comm) => {
                     return (
-                    <li>apple</li>
-                    //   <li key={comm._id}>
-                    //     <Media className="row mt-4">
-                    //       <Media left className="mr-0 col-4 col-md-2">
-                    //         <Media
-                    //           object
-                    //           className="ml-0 comments-profile-pic"
-                    //           src={profile_pic}
-                    //           alt={comm.author}
-                    //         />
-                    //         <br />
-                    //         <p className="comments-data">
-                    //           <b>{comm.author}</b> at{" "}
-                    //           {"01-04-2021"}
-                    //         </p>
-                    //       </Media>
-                    //       <Media className=" comment mr-0 col-8 col-md-10" body>
-                    //         {comm.comment}
-                    //       </Media>
-                    //       <Media>
-                    //           <Button
-                    //             color="danger"
-                    //             //onClick={() => deleteComment(comm._id)}
-                    //           >
-                    //             <span className="fa fa-trash"></span>
-                    //           </Button>
-                    //       </Media>
-                    //     </Media>
-                    //     <hr />
-                    //   </li>
-                    );
-                  })
-              ) : (
-                <p className="mt-5">
-                  Currently no comments. be first one to comment!!
-                </p>
-              )}
+                        <li key={comm._id}>
+                            <Media className="row mt-4">
+                            <Media left className="mr-0 col-4 col-md-3">
+                                <Media
+                                object
+                                className="comments-profile-pic ml-0 "
+                                src={profile_pic}
+                                alt={comm.author}
+                                />
+                                <br />
+                                <p className='comments-data'>
+                                    <b>{comm.author}</b><br/>
+                                    at {"01-04-2021"}
+                                </p>
+                            </Media>
+                            <Media className="comment mr-0 col-8 col-md-9" body>
+                                {comm.comment}
+                            </Media>
+                            <Media>
+                                <Button
+                                    color="danger"
+                                    style={{backgroundColor: '#ec524b'}}
+                                    //onClick={() => deleteComment(comm._id)}
+                                >
+                                    <span className="fa fa-trash"></span>
+                                </Button>
+                            </Media>
+                            </Media>
+                            <hr />
+                        </li>
+                    )})}    
             </ul>
-    );
-    
+        </div>
+    )
 }
-
-
 
 class JobDetail extends Component {
 
@@ -139,8 +165,8 @@ class JobDetail extends Component {
                 </CardSubtitle>
                 <div className='row justify-content-center'>
                     <ButtonGroup>
-                        <Button className='mt-3' color='danger'><span className='fa fa-lg fa-pencil-square mr-2 ml-2' />APPLY</Button>
-                        <Button className='mt-3' color='success'><span className='fa fa-lg fa-bookmark mr-2 ml-2' />SAVE</Button>
+                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}}><span className='fa fa-lg fa-pencil-square mr-2 ml-2' />APPLY</Button>
+                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}}><span className='fa fa-lg fa-bookmark mr-2 ml-2' />SAVE</Button>
                     </ButtonGroup>
                 </div>
             </CardBody>
@@ -153,25 +179,31 @@ class JobDetail extends Component {
         );
     }
 
-    renderabc = () => {
-        return(
-            <h5>apple</h5>
-        );
-    }
-
     render(){
         return(
+
                 <div className="jobs mt-5" style={{marginLeft: '5%', marginRight: '5%'}}>
-                    <div className="row   mt-4" >
-                        <div className='col-md-8'>
+                                                {this.renderabc}
+                    <div className="row mt-4" >
+                        <div className='col-md-7 mb-5'>
                             {this.RenderJobDetail(data[0])}
-                            {this.renderabc}
                         </div>
-                        <div className='queryMain col-md-4'>
-                            <h4 style={{textAlign: 'center', color: 'white', backgroundColor: '#577399'}}>JOB QUERIES</h4>
+                        <div className='col-md-5'>
+                            <div style={{backgroundColor: '#577399'}}>
+                                <h3 style={{verticalAlign: 'center', 
+                                textAlign: 'center',
+                                color: 'white'
+                                }}>
+                                    JOB QUERIES
+                                </h3>
+                            </div>
+                            <div className='queryMain' style={{backgroundColor: '#f0fff3'}}>
+                                <RenderComments/>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
         );
     }
 }
