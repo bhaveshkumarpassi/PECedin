@@ -57,7 +57,7 @@ class Home extends Component {
                     10-04-2021 Coding Round
                 </CardSubtitle> */}
                 <div className='row justify-content-center mt-4'>
-                    <Link to={'/signup'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Job Details</Button></Link>
+                    <Link to={'/Job'}><Button className='col-12 mt-3' color='danger' onClick={()=>{this.props.fetchJob(job.jobID)}} ><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Job Details</Button></Link>
                     <Link to={'/Applied-Candidates'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-graduation-cap mr-2 ml-2' />Applied Candidates</Button></Link>
                 </div>
             </CardBody>
@@ -66,11 +66,11 @@ class Home extends Component {
     }
 
     renderCardList = ()=>{
-        return this.props.JOBS.forEach((job) => {
-            console.log(job.data())  
+        return this.props.JOBS.map((job) => {
+           
             return (
-                <div className="col-12 col-lg-3 col-md-6 col-sm-6 mt-1 mb-4"  key={job.id}>
-                    {this.RenderMenuItem(job.data())}
+                <div className="col-12 col-lg-3 col-md-6 col-sm-6 mt-1 mb-4"  key={job.jobID}>
+                    {this.RenderMenuItem(job)}
                     
                 </div>
             );
@@ -102,7 +102,8 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
     return {
-        loadJobs : ()=>dispatch(actions.fetchAllJobs())
+        loadJobs : ()=>dispatch(actions.fetchAllJobs()),
+        fetchJob : (jobID)=>dispatch(actions.fetchJob(jobID))
     }
 }
 

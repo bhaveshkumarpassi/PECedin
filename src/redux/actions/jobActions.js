@@ -19,8 +19,13 @@ export const fetchAllJobs = ()=>{
     return dispatch =>{
         firestore.collection("jobs").get()
         .then((jobs)=>{
-            console.log(jobs)
-            dispatch({type : actionTypes.LOAD_JOBS, JOBS : jobs})
+            let JOBS = [];
+            jobs.forEach((job)=>{
+                console.log(job.data())
+                JOBS.push({...job.data(), jobID : job.id})
+            })
+            
+            dispatch({type : actionTypes.LOAD_JOBS, JOBS : JOBS})
         })
         .catch((err)=>{
             console.log(err)
@@ -34,6 +39,7 @@ export const fetchJob = (id)=>{
         .then((doc)=>{
             if(doc.exists){
                 console.log(doc.data())
+                dispatch({type : actionTypes.LOAD_CHOSEN_JOB, job : {...doc.data(), jobID : id}})
             }
         })
         .catch((err)=>{
