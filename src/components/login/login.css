@@ -1,28 +1,37 @@
 .LoginDiv{
     box-shadow: 0 0 2px #495867;
     padding: 5%;
-    width: 90%;
-    margin-top: 10%;
-    background-color: #577399;
-    color: #F7F7FF;
+    width: 100%;
+    background-color: #F7F7FF;
+    opacity: 0.90;
+    color: #265279;
+    margin-top: 5%; 
 }
 
 .LoginDiv2{
     box-shadow: 0 0 2px #495867;
     padding: 5%;
-    width: 90%;
+    width: 100%;
     margin-top: 5%;
-    background-color: #577399;
-    color: #F7F7FF;
+    background-color: #F7F7FF;
+    color: #265279;
+    opacity: 0.90;
 }
 .LoginDiv2Navlink{
-    color: #BDD5EA;
+    color: #495867;
 }
 
 .LoginDiv2Navlink:hover{
-    color: #F7F7FF;
+    color: black;
 }
 
 .LoginCorousel{
-    
+    /* height: 350px;
+    background-size: contain;
+    overflow: hidden;
+    width : 100% ;
+    box-shadow: 0 0 20px black;
+    border-radius: 30px;
+    margin-left: 5%;
+    margin-right: 5%; */
 }

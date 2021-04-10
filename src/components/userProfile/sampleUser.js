@@ -1,10 +1,13 @@
+import React from "react";
+import {MdComputer} from "react-icons/md";
+import {FaDatabase, FaMoneyCheckAlt} from "react-icons/fa";
+
 export const SampleUser = {
     sid : "19103102",
-    name : "Nisha",
+    name : "Nisha Yadav",
     cgpa : "6.9",
     branch : "Computer Science & Engineering",
     email : "nisha.bt19cse@pec.edu.in",
     password : "random",
-    image : "https://lh3.googleusercontent.com/proxy/nyZm2LFh9xt25TQI515oAt0aS_5xZrvDnw4gXdworE93gkMqJ1D3PEZzBoBmh_yf12ubiyfAIiM-ADI5Pis85VNzHM9WdHRr0VoERl6-ByFASy8",
-    interests : ["Finance", "Software Developer", "Data Science"],
+    preferences : [{name : "Finance", logo : <FaMoneyCheckAlt size="30px"/> }, {name : "Software Developer", logo : <MdComputer size="30px"/> }, {name : "Data Science", logo : <FaDatabase  size="30px"/> }],
 };

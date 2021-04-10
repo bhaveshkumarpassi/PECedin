@@ -1,20 +1,26 @@
+
 .userProfileDiv{
-    width: 90%;
-    margin : 5%;
+    background-color: #F7F7FF;
+    width: 100%;
+    /* margin : 5% 10% 5% 10%; */
     box-shadow: 0 0 4px #577399;
     padding: 2%;
     border-radius: 3px;
+    overflow: scroll;
+    opacity: 0.95;
 }
 
 .userResume{
-    width : 718px;
-    height : 700px; 
+    width : 70%;
+    height: 700px;
     margin-top: 2%;
 }
 
 .userInfoDiv{
     width: 90%;
-    margin: 2% 5% 2% 5%;
+    margin: 5% 5% 5% 5%;
+    height: 450px;
+    overflow: scroll;
 }
 
 .userDP{
@@ -23,6 +29,8 @@
     border-radius: 200px;
     padding: 5px;
     box-shadow: 0 0 2px black;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .EditButton{
@@ -35,8 +43,73 @@
     padding-top: 10px;
     padding-left: 5px;
     box-shadow: 0 0 2px #FE5F55;
+    align-items: right;
 }
 
 .EditButton:hover{
     box-shadow : 0 0 5px #577399;
+    cursor: pointer;
+}
+
+.InfoKey{
+    font-size: 25px;
+    color: #265279;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.InfoValue{
+    color: black;
+    font-size: 25px;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+
+.PreferenceCards{
+    margin : 10px;
+    color : black;
+    height: 90px;
+    font-size: 20px;
+    box-shadow: 0 0 2px #577399;
+}
+
+.PreferenceCards:hover{
+    box-shadow: 0 0 3px black;
+}
+
+.PreferenceCardsDiv{
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+/* -------------------------------------profileEdit----------------------------------- */
+
+.ProfileEdit{
+    margin : 3% 5% 3% 8% ;
+    width: 87%;
+    height: 600px;
+    overflow : scroll;
+}
+
+.ProfileEditLabel{
+    font-weight: 600;
+    color: #577399;
+}
+
+.ProfileEdit::-webkit-scrollbar {
+    display: none;
+}
+
+.ProfileEditDiv2{
+    width: 90%;
+    margin-left: 8%;
+    margin-right: 2%;
+}
+
+.ProfileEditImg{
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    box-shadow: 0 0 3px #495867;
+    margin : 20% 0% 5% 0%;
 }

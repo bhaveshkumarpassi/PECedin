@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------*/
+/* -----------------------------------------------------------------
         /*--------------NAVBAR------------------------*/
 
 /* ------------------------------------- */
@@ -79,7 +79,7 @@
 .navbar-link:hover{
     background-color: #a5ecd7;
     border-bottom: 3px solid var(--color-secondary-blue);
-}
+} */
 
 
 .NavBarLink{
@@ -141,10 +141,10 @@ footer{
 .footerSection
 {   
     background-color:#f0f3f5;
-    /* background-color: #f9f9f9; */
-    /*color:#bbb;*/
-    /* color:#5e5e5e; */
-    color: #3aa6d1;
+    background-color : #f9f9f9; 
+    color:#bbb;
+    /* color:#5e5e5e;
+   color: #3aa6d1; */
     padding:2rem;
     font-size: 10 rem;   
     border-top-color: black;
@@ -231,4 +231,4 @@ padding-right:15px;
 
 .footerContent{
     text-align: center;
-}
+} 
