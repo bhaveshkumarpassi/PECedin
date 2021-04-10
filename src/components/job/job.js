@@ -96,7 +96,8 @@ class JobDetail extends Component {
                 <div className="container jobs">
                     <div className="row   mt-4" >
                         <div className='col-md-8'>
-                            {this.RenderJobDetail(data[0])}
+                            {/* <h6>{this.props.job}</h6> */}
+                            {this.RenderJobDetail(this.props.job)}
                         </div>
                     </div>
                 </div>

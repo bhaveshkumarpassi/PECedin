@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Card, Button, FormGroup, Label, Input,
     CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardSubtitle, CardText, CardImg} from 'reactstrap';
+import {Link} from 'react-router-dom';
 import Header from '../header_footer.js/header';
 import Footer from '../header_footer.js/footer';
 import SDE from '../../images/sde.jpg'
@@ -50,7 +51,7 @@ class Home extends Component {
                     10-04-2021 Coding Round
                 </CardSubtitle>
                 <div className='row mt-4'>
-                    <Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Details</Button>
+                    <Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' /><Link to={`/Home/${job.id}`}>View Details</Link></Button>
                 </div>
             </CardBody>
           </Card>

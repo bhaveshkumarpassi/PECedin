@@ -74,6 +74,7 @@
     margin-right: 8px;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    border-radius: 5rem;
 }
 .navbar-link:hover{
     background-color: #a5ecd7;

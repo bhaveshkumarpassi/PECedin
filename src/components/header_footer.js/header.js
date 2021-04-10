@@ -11,7 +11,7 @@ class header extends Component {
         return (
             <div className="header__section">
             <header className = "header">
-                <Navbar collapseOnSelect expand="lg" className="page__Navigation nav--sticky">
+                <Navbar collapseOnSelect expand="lg"  className="page__Navigation nav--sticky">
                 <Navbar.Brand href="/">
                         <Image src={Logo} className="d-inline-block align-top" id ="CompanyImage" alt="company_logo"/>
                 </Navbar.Brand>
