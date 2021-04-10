@@ -51,7 +51,8 @@ class Home extends Component {
                     10-04-2021 Coding Round
                 </CardSubtitle>
                 <div className='row justify-content-center mt-4'>
-                    <Link to={'/signup'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Details</Button></Link>
+                    <Link to={'/signup'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Job Details</Button></Link>
+                    <Link to={'/Applied-Candidates'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-graduation-cap mr-2 ml-2' />Applied Candidates</Button></Link>
                 </div>
             </CardBody>
           </Card>
