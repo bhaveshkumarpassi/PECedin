@@ -3,9 +3,9 @@ import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter, J
     CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
 import profile_pic from '../../images/profile_pic.png';
 import { LocalForm, Control, Errors } from "react-redux-form";
-import Header from '../header_footer.js/header';
-import Footer from '../header_footer.js/footer';
-import SDE from '../../images/sde.jpg'
+// import Header from '../header_footer.js/header';
+// import Footer from '../header_footer.js/footer';
+// import SDE from '../../images/sde.jpg'
 import './job.css'
 
 const data = [

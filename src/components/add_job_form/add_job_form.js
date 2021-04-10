@@ -14,11 +14,19 @@ const Add_Job = ()=>{
         description : "",
         jobType : "",
         ctc : "",
-        cgpa : "",
+        cgpa : 0,
         branches : [],
         timeline : []
     })
 
+    const changeHandler = (event)=>{
+        setJob((prev)=>{
+            return{
+                ...prev,
+                [event.target.name] : event.target.value
+            }
+        })
+    }
 
     const [timeline, AddToTimeline] = useState([]);
     const [event, setEvent] = useState({
@@ -29,7 +37,14 @@ const Add_Job = ()=>{
     const addEventHandler=()=>{
         if(event.date!==null && event.eventText!==null){
         AddToTimeline((prev)=>{
-            return [...prev, event]
+            prev =  [...prev, event];
+            setJob((prevJob)=>{
+                return {
+                    ...prevJob,
+                    timeline : prev
+                }
+            })
+            return prev;
         })
 
         setEvent({
@@ -39,7 +54,7 @@ const Add_Job = ()=>{
         
     }
     }
-    
+
     const inputHandler = (event)=>{
         setEvent((prevEvent)=>{
             return {
@@ -47,6 +62,24 @@ const Add_Job = ()=>{
                 [event.target.name] : event.target.value
             }
         })
+    }
+
+    const [selectedBranches, setBranches] = useState(new Set());
+
+    const onBranchChange = (event)=>{
+        setBranches((prev)=>{
+            if(prev.has(event.target.name)){prev.delete(event.target.name);}
+            else {prev.add(event.target.name);}
+            setJob((prevJob)=>{
+                return{
+                    ...prevJob,
+                    branches : [...prev]
+                }
+            })
+            return prev;
+
+        })
+        
     }
 
     return <div style={{
@@ -58,60 +91,60 @@ const Add_Job = ()=>{
         <Row form>
             <Col lg="6">
                 <FormGroup>
-            <Label for="companyName">Company Name</Label>
-            <Input type="text" id = "companyName" name="companyName"/></FormGroup>
+            <Label for="companyName" className="JobLabel">Company Name</Label>
+            <Input type="text" id = "companyName" name="companyName" onChange={changeHandler}/></FormGroup>
             </Col>
             <Col lg="6">
-            <Label for="profile">Select Profile</Label>
-        <Input type="select" id="profile" name="profile">
+            <Label for="profile" className="JobLabel">Select Profile</Label>
+        <Input type="select" id="profile" name="profile" onChange={changeHandler}>
         {Profiles.map((profile, index)=>{
           return <option key={index} >{profile}</option>
       })}</Input>
             </Col>
         </Row>
         <Row form>
-        <Col lg="12"><FormGroup><Label for="jobDescription">Description</Label>
-        <Input type="textarea" id="jobDescription" name="jobDescription" /></FormGroup></Col>
+        <Col lg="12"><FormGroup><Label for="jobDescription" className="JobLabel">Description</Label>
+        <Input type="textarea" id="jobDescription" name="description" onChange={changeHandler}/></FormGroup></Col>
             </Row>
-            <Row lg="6"><Col><Label for="jobType">Select Type</Label></Col>
-                        <Col ><Input type="radio" id="jobType" name="jobType" value="Internship"/>{"Internship"}</Col>
-                        <Col><Input type="radio" id="jobType"  name="jobType" value="Full Time"/>{"Full Time"}</Col>
+            <Row lg="6"><Col><Label for="jobType" className="JobLabel">Select Type</Label></Col>
+                        <Col ><Input type="radio" id="jobType" name="jobType" value="Internship" onChange={changeHandler}/>{"Internship"}</Col>
+                        <Col><Input type="radio" id="jobType"  name="jobType" value="Full Time" onChange={changeHandler}/>{"Full Time"}</Col>
                         </Row>
             <Row form>
             <Col lg="6">
                 <FormGroup>
-            <Label for="ctc">Stipend / CTC</Label>
-            <Input type="text" id = "ctc" name="ctc"/></FormGroup>
+            <Label for="ctc" className="JobLabel">Stipend / CTC</Label>
+            <Input type="text" id = "ctc" name="ctc" onChange={changeHandler}/></FormGroup>
             </Col>
             <Col lg="6">
                 <FormGroup>
-            <Label for="cgpa">MIN CGPA REQUIRED</Label>
-            <Input type="number" id = "cgpa" name="cgpa" min={0} max={10}/></FormGroup>
+            <Label for="cgpa" className="JobLabel">MIN CGPA REQUIRED</Label>
+            <Input type="number" id = "cgpa" name="cgpa" min={0} max={10} onChange={changeHandler}/></FormGroup>
             </Col>
             </Row>
             <FormGroup form >
-            <Label for="branches">Select Branches</Label>
+            <Label for="branches" className="JobLabel">Select Branches</Label>
             <Row id="branches" check>
             {Branches.map((branch, index)=>{
                 return <Col lg="4" key={index}><Label check>
-                <Input type="checkbox" name={branch}/>{" "}{branch}</Label></Col>
+                <Input type="checkbox" name={branch} onChange={onBranchChange} />{" "}{branch}</Label></Col>
             })}
             </Row>
       </FormGroup>
-      <Label>ADD SELECTION TIMELINE</Label>
+      <Label className="JobLabel">ADD SELECTION TIMELINE</Label>
       <Row>
             <Col lg="9">
             <Row>
                             <Col>
-                            <FormGroup><Label for="eventDate">Date</Label>
+                            <FormGroup><Label for="eventDate" className="JobLabel">Date</Label>
                             <Input type="Date" onChange={inputHandler} name="date" /></FormGroup>
                             </Col>
                             <Col>
-                            <FormGroup><Label for="eventText">Event</Label>
+                            <FormGroup><Label for="eventText" className="JobLabel">Event</Label>
                             <Input type="text" onChange={inputHandler} name="eventText" /></FormGroup>
                             </Col>
                             <Col lg="3">
-                                <Label>Add Event</Label>
+                                <Label className="JobLabel">Add Event</Label>
                                 <div className="addTimelineButton" onClick={addEventHandler}><IoAddOutline size="30px"/></div></Col>
                         </Row>
                 {timeline.map((t, index)=>{
@@ -120,7 +153,9 @@ const Add_Job = ()=>{
                     }})}
             </Col>
         </Row>
-      <Button>ADD JOB</Button>
+      <Button onClick={()=>{
+          console.log(job)
+      }} >ADD JOB</Button>
       </div>
     </div>
 }
