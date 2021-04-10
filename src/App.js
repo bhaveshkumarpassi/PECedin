@@ -28,7 +28,9 @@ class App extends Component {
           <Route path = "/signup" exact component={SignUpMain}/>
           <Route path = "/user" exact component={UserProfile}/>
           <Route path ="/addJob" exact component={Add_Job} />
-          <Route path = "/Home" exact component={Home} />
+          <Route path = "/Home" exact render={()=><Home heading="All JOB OPENINGS"/>} />
+          <Route path = "/applied" exact render={()=><Home heading="APPLIED JOBS"/>} />
+          <Route path = "/interested" exact render={()=><Home heading="INTERESTED JOBS"/>} />
           <Route path = "/Job" exact component={JobDetail} />
           <Route path = "/Applied-Candidates" exact component={Candidate} />
           <Redirect to="/Home" />
