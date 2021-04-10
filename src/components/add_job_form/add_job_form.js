@@ -19,16 +19,8 @@ class Add_Job extends Component {
             <div className="forms__section">
             <Container>
             <Col md={12} className="contact__main__content">
-                    <Row>
-                        <Breadcrumb className="mb-4 page__navigation__breadCrump">
-                            <BreadcrumbItem>
-                                <Link to="/home">Home</Link>
-                            </BreadcrumbItem>
-                            <BreadcrumbItem active>Add JOB</BreadcrumbItem>
-                        </Breadcrumb>
-                    </Row>
                     <div>
-                        <Jumbotron className='form-jumbotron'>
+                        <Jumbotron className='mt-5 form-jumbotron'>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                 <Form.Label><span className="form__icon"></span>Title</Form.Label>

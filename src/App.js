@@ -30,14 +30,6 @@ class App extends Component {
 
   render(){
 
-    const JobWithId = ({ match }) => {
-      return (
-          <JobDetail
-              job={data.filter((j) => j.id === match.params.jobId)}
-          />
-      );
-    };
-
     return (
       <div className="App">
          <Header />
@@ -47,7 +39,7 @@ class App extends Component {
           <Route path = "/user" exact component={UserProfile}/>
           <Route path ="/addJob" exact component={Add_Job} />
           <Route path = "/Home" exact component={Home} />
-          <Route path = "/Home/:jobId" exact component={JobWithId} />
+          <Route path = "/Job" exact component={JobDetail} />
           <Redirect to="/Home" />
         </Switch>
         <Footer /> 

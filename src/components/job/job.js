@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Card, Button, FormGroup, Label, Input, CardHeader, CardFooter,
+import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter,
     CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardSubtitle, CardText, CardImg, ButtonGroup} from 'reactstrap';
+import profile_pic from '../../images/profile_pic.png'
 import Header from '../header_footer.js/header';
 import Footer from '../header_footer.js/footer';
 import SDE from '../../images/sde.jpg'
@@ -17,6 +18,69 @@ const data = [
     {id: 7, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
 
 ]
+
+const commentsArray = [
+    {_id: 0, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 1, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 2, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 3, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 4, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 5, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+
+];
+
+const renderComments = () => {
+
+    return(
+
+        <ul className="list-unstyled">
+              {commentsArray.length ? (
+                commentsArray
+                  .map((comm) => {
+                    return (
+                    <li>apple</li>
+                    //   <li key={comm._id}>
+                    //     <Media className="row mt-4">
+                    //       <Media left className="mr-0 col-4 col-md-2">
+                    //         <Media
+                    //           object
+                    //           className="ml-0 comments-profile-pic"
+                    //           src={profile_pic}
+                    //           alt={comm.author}
+                    //         />
+                    //         <br />
+                    //         <p className="comments-data">
+                    //           <b>{comm.author}</b> at{" "}
+                    //           {"01-04-2021"}
+                    //         </p>
+                    //       </Media>
+                    //       <Media className=" comment mr-0 col-8 col-md-10" body>
+                    //         {comm.comment}
+                    //       </Media>
+                    //       <Media>
+                    //           <Button
+                    //             color="danger"
+                    //             //onClick={() => deleteComment(comm._id)}
+                    //           >
+                    //             <span className="fa fa-trash"></span>
+                    //           </Button>
+                    //       </Media>
+                    //     </Media>
+                    //     <hr />
+                    //   </li>
+                    );
+                  })
+              ) : (
+                <p className="mt-5">
+                  Currently no comments. be first one to comment!!
+                </p>
+              )}
+            </ul>
+    );
+    
+}
+
+
 
 class JobDetail extends Component {
 
@@ -89,20 +153,25 @@ class JobDetail extends Component {
         );
     }
 
+    renderabc = () => {
+        return(
+            <h5>apple</h5>
+        );
+    }
+
     render(){
         return(
-            <div>
-            <Header/>
-                <div className="container jobs">
+                <div className="jobs mt-5" style={{marginLeft: '5%', marginRight: '5%'}}>
                     <div className="row   mt-4" >
                         <div className='col-md-8'>
-                            {/* <h6>{this.props.job}</h6> */}
-                            {this.RenderJobDetail(this.props.job)}
+                            {this.RenderJobDetail(data[0])}
+                            {this.renderabc}
+                        </div>
+                        <div className='queryMain col-md-4'>
+                            <h4 style={{textAlign: 'center', color: 'white', backgroundColor: '#577399'}}>JOB QUERIES</h4>
                         </div>
                     </div>
                 </div>
-            <Footer/>
-            </div>
         );
     }
 }

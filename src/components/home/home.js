@@ -50,8 +50,8 @@ class Home extends Component {
                 <CardSubtitle tag="h6" style={{color: '#1597bb'}} className="mb-2 mt-3">
                     10-04-2021 Coding Round
                 </CardSubtitle>
-                <div className='row mt-4'>
-                    <Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' /><Link to={`/Home/${job.id}`}>View Details</Link></Button>
+                <div className='row justify-content-center mt-4'>
+                    <Link to={'/signup'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Details</Button></Link>
                 </div>
             </CardBody>
           </Card>
