@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
+<<<<<<< HEAD
 import { Card, Button, CardHeader, CardFooter,
  CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
 import Header from '../header_footer.js/header';
 import Footer from '../header_footer.js/footer';
+=======
+import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter, Jumbotron,
+    CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
+import profile_pic from '../../images/profile_pic.png';
+import { LocalForm, Control, Errors } from "react-redux-form";
+// import Header from '../header_footer.js/header';
+// import Footer from '../header_footer.js/footer';
+// import SDE from '../../images/sde.jpg'
+>>>>>>> f73827c1d80f540a6141340b5d51837ea171107d
 import './job.css'
 
 const data = [
@@ -16,6 +26,94 @@ const data = [
     {id: 7, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
 
 ]
+
+const comments = [
+    {_id: 0, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 1, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 2, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 3, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 4, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+    {_id: 5, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
+
+];
+
+const RenderComments = () => {
+
+    return(
+
+        <div style={{marginLeft: '3%', marginRight: '3%'}}>
+            <LocalForm >
+                <div className="row form-group">
+                    <Label htmlFor="comment" className="col-12">
+                    <span className="fa fa-lg  fa-pencil-square-o ml-1 mr-2"></span>
+                        Post Query
+                    </Label>
+                    <div className="col-12">
+                    <Control.textarea
+                        model=".comment"
+                        name="comment"
+                        className="form-control"
+                        id="comment"
+                        rows="3"
+                        placeholder={"Type your query here ...."}
+                    />
+                    <Errors
+                        className="text-danger"
+                        show="touched"
+                        model=".comment"
+                        messages={{
+                        required: "Required",
+                        maxLength: "Must be 500 characters or less",
+                        }}
+                    />
+                    </div>
+                </div>
+                <div className="row form-group">
+                    <div className="col-12">
+                    <Button type="submit" style={{backgroundColor: '#FE5F55'}}>
+                        Submit
+                    </Button>
+                    </div>
+                </div>
+            </LocalForm>
+            <ul className="ml-2 list-unstyled mr-2">
+                {comments.map((comm) => {
+                    return (
+                        <li key={comm._id}>
+                            <Media className="row mt-4">
+                            <Media left className="mr-0 col-4 col-md-3">
+                                <Media
+                                object
+                                className="comments-profile-pic ml-0 "
+                                src={profile_pic}
+                                alt={comm.author}
+                                />
+                                <br />
+                                <p className='comments-data'>
+                                    <b>{comm.author}</b><br/>
+                                    at {"01-04-2021"}
+                                </p>
+                            </Media>
+                            <Media className="comment mr-0 col-8 col-md-9" body>
+                                {comm.comment}
+                            </Media>
+                            <Media>
+                                <Button
+                                    color="danger"
+                                    style={{backgroundColor: '#ec524b'}}
+                                    //onClick={() => deleteComment(comm._id)}
+                                >
+                                    <span className="fa fa-trash"></span>
+                                </Button>
+                            </Media>
+                            </Media>
+                            <hr />
+                        </li>
+                    )})}    
+            </ul>
+        </div>
+    )
+}
 
 class JobDetail extends Component {
 
@@ -74,8 +172,8 @@ class JobDetail extends Component {
                 </CardSubtitle>
                 <div className='row justify-content-center'>
                     <ButtonGroup>
-                        <Button className='mt-3' color='danger'><span className='fa fa-lg fa-pencil-square mr-2 ml-2' />APPLY</Button>
-                        <Button className='mt-3' color='success'><span className='fa fa-lg fa-bookmark mr-2 ml-2' />SAVE</Button>
+                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}}><span className='fa fa-lg fa-pencil-square mr-2 ml-2' />APPLY</Button>
+                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}}><span className='fa fa-lg fa-bookmark mr-2 ml-2' />SAVE</Button>
                     </ButtonGroup>
                 </div>
             </CardBody>
@@ -90,17 +188,29 @@ class JobDetail extends Component {
 
     render(){
         return(
-            <div>
-            <Header/>
-                <div className="container jobs">
-                    <div className="row   mt-4" >
-                        <div className='col-md-8'>
+
+                <div className="jobs mt-5" style={{marginLeft: '5%', marginRight: '5%'}}>
+                                                {this.renderabc}
+                    <div className="row mt-4" >
+                        <div className='col-md-7 mb-5'>
                             {this.RenderJobDetail(data[0])}
+                        </div>
+                        <div className='col-md-5'>
+                            <div style={{backgroundColor: '#577399'}}>
+                                <h3 style={{verticalAlign: 'center', 
+                                textAlign: 'center',
+                                color: 'white'
+                                }}>
+                                    JOB QUERIES
+                                </h3>
+                            </div>
+                            <div className='queryMain' style={{backgroundColor: '#f0fff3'}}>
+                                <RenderComments/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            <Footer/>
-            </div>
+                
         );
     }
 }

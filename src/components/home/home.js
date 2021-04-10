@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
-import { Card, Button, 
-    CardTitle, CardBody, CardSubtitle, CardImg} from 'reactstrap';
+import { Card, Button, FormGroup, Label, Input,
+    CardTitle, Breadcrumb, BreadcrumbItem, CardBody, CardSubtitle, CardText, CardImg} from 'reactstrap';
+import {Link} from 'react-router-dom';
+import Header from '../header_footer.js/header';
+import Footer from '../header_footer.js/footer';
 import SDE from '../../images/sde.jpg'
 import './home.css'
 
@@ -47,8 +50,8 @@ class Home extends Component {
                 <CardSubtitle tag="h6" style={{color: '#1597bb'}} className="mb-2 mt-3">
                     10-04-2021 Coding Round
                 </CardSubtitle>
-                <div className='row mt-4'>
-                    <Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Details</Button>
+                <div className='row justify-content-center mt-4'>
+                    <Link to={'/signup'}><Button className='col-12 mt-3' color='danger'><span className='fa fa-lg fa-info-circle mr-2 ml-2' />View Details</Button></Link>
                 </div>
             </CardBody>
           </Card>

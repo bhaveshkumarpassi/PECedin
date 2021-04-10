@@ -1,3 +1,21 @@
+
+
+.queryMain{
+    height: 35rem;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+}
+
+.comments-profile-pic {
+    width: 45%;
+    height: 45%;
+    margin-left: 0%;
+}
+
+.comments-data {
+    font-size: x-small;
+}
+
 .job {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.4)
 }
