@@ -26,12 +26,14 @@
 }
 
 .LoginCorousel{
-    /* height: 350px;
+    height: 350px;
     background-size: contain;
     overflow: hidden;
-    width : 100% ;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 25px black;
     border-radius: 30px;
-    margin-left: 5%;
-    margin-right: 5%; */
+}
+
+.LoginCorouselDiv{
+    width: 80%;
+    margin: 5% 10% 5% 10%;
 }

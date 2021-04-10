@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import display1 from "../../assets/display1.jpg";
+import display2 from "../../assets/display2.jpg";
 import {
   Carousel,CarouselItem,CarouselControl,CarouselIndicators} from 'reactstrap';
 
 const items = [
   {
-    src : "https://images.shiksha.com/mediadata/images/1488191373php5kGBoN.jpeg",
+    src : "https://s3images.zee5.com/wp-content/uploads/sites/7/2020/06/punjab_june_9_R6nKery.jpg",
     altText : "Slide 1"
   },
   {
-    src : "https://getmyuni.azureedge.net/college-image/big/punjab-engineering-college-university-of-technology-pec-chandigarh.jpg",
+    src : display1,
     altText: 'Slide 2',
   },
   {
-    src : "https://www.marketingmind.in/wp-content/uploads/2019/06/yes-700x367.png",
+    src : display2,
     altText: 'Slide 3',
   },
 
@@ -46,13 +48,14 @@ const LoginCorousel = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+        <img src={item.src} alt={item.altText} style ={{ objectFit: "cover" }}/>
       </CarouselItem>
     );
   });
 
   return (
-      <div className="LoginCorousel">
+      <div className="LoginCorouselDiv">
+        <center>
     <Carousel
       activeIndex={activeIndex}
       next={next}
@@ -64,6 +67,7 @@ const LoginCorousel = (props) => {
       <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
+    </center>
     </div>
   );
 }
