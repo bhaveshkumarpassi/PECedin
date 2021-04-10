@@ -60,21 +60,3 @@ export default TimelineEdit;
 
 
 
-//css rules
-
-// .addTimelineButton{
-//     height: 30px;
-//     width: 30px;
-//     background-color: #FE5F55;
-//     border-radius: 30px;
-//     color: #F7F7FF;
-//     padding-top: 1px;
-//     padding-left: 5px;
-//     box-shadow: 0 0 2px #FE5F55;
-//     cursor: pointer;
-// }
-
-// .addTimelineButton:hover{
-//     box-shadow : 0 0 5px #577399;
-//     cursor: pointer;
-// }
