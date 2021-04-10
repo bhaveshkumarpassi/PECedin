@@ -9,6 +9,7 @@ import Home from './components/home/home';
 import JobDetail from './components/job/job';
 import Candidate from './components/applied_candidates/candidates';
 import Add_Job from "./components/add_job_form/add_job_form";
+import Aboutus from "./components/aboutUs/aboutUs";
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path = "/interested" exact render={()=><Home heading="INTERESTED JOBS"/>} />
           <Route path = "/Job" exact component={JobDetail} />
           <Route path = "/Applied-Candidates" exact component={Candidate} />
+          <Route path = '/aboutUs' exact component={Aboutus} />
           <Redirect to="/Home" />
         </Switch>
         <Footer /> 

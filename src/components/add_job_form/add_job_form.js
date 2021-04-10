@@ -108,7 +108,7 @@ const Add_Job = (props)=>{
             </Col>
             <Col lg="6">
             <Label for="profile" className="JobLabel">Select Profile</Label>
-        <Input type="select" id="profile" name="profile" onChange={changeHandler}>
+        <Input type="select" id="profile" name="profile"  onChange={changeHandler}>
         {Profiles.map((profile, index)=>{
           return <option key={index} >{profile}</option>
       })}</Input>

@@ -79,6 +79,7 @@ class Home extends Component {
 
     render(){
         return(
+            
             <div>
                 <div className="container jobs">
                     <div className='row justify-content-center mt-3'>
