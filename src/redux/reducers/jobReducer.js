@@ -1,3 +1,5 @@
+import * as actionTypes from "../actions/actionTypes";
+
 const initialState = {
     companyName : "",
     profile : "Finance",
@@ -6,9 +8,18 @@ const initialState = {
     ctc : "",
     cgpa : 0,
     branches : [],
-    timeline : []
+    timeline : [],
+    showAlert : false,
+    JOBS : null
 }
 
 export const JobReducer = (state = initialState, action)=>{
-    return state;
+    switch(action.type){
+        case actionTypes.JOB_ADDED :
+            return {...state, showAlert : true}
+        case actionTypes.HIDE_ALERT :
+            return {...state, showAlert : false}
+        default : return state;
+    }
 }
+
