@@ -12,8 +12,8 @@ class footer extends Component{
                         <div className="footerSectionInner">
                             <Row>
                             <Col md={6} className="footerColumnicons">
-                            <div className="footerHeading">Get Social With Us</div>
-                            <div className  = "footerContent">
+                            <div className="footerHeading" >Get Social With Us</div>
+                            <div className  = "footerContent" style={{textAlign:'center'}}>
                                 <h2>Thanks for connecting.</h2>
                                 <a href ="#" className ="social_links"><span className= "social_icons facebook"><FaFacebookSquare/></span> Facebook</a>
                                 <a href ="#" className ="social_links"><span className= "social_icons linkedIn"><FaLinkedin/></span>LinkedIn</a>
@@ -35,4 +35,3 @@ class footer extends Component{
     }
 }
 export default footer;
-

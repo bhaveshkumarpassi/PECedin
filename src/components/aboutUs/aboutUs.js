@@ -20,7 +20,7 @@ const Aboutus = () => {
         marginTop:'4px',
         borderRadius:'0.8px'
     }}>
-      <Jumbotron style={{opacity:0.9}} mt-2>
+      <Jumbotron style={{opacity:0.9}} mt-2 mr-2>
         <div>
         <Row>
         <h4 className="display-8" style={{fontStyle:'oblique',fontWeight:'bolder',color:'black'}}>PECedIN-Gateway for the Placements and Internships</h4>

@@ -1,10 +1,4 @@
 import React, {Component} from 'react';
-<<<<<<< HEAD
-import { Card, Button, CardHeader, CardFooter,
- CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
-import Header from '../header_footer.js/header';
-import Footer from '../header_footer.js/footer';
-=======
 import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter, Jumbotron,
     CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
 import profile_pic from '../../images/profile_pic.png';
@@ -12,7 +6,6 @@ import { LocalForm, Control, Errors } from "react-redux-form";
 // import Header from '../header_footer.js/header';
 // import Footer from '../header_footer.js/footer';
 // import SDE from '../../images/sde.jpg'
->>>>>>> f73827c1d80f540a6141340b5d51837ea171107d
 import './job.css'
 
 const data = [

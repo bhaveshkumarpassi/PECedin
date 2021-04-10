@@ -10,25 +10,6 @@ import JobDetail from './components/job/job';
 import Add_Job from "./components/add_job_form/add_job_form";
 import Aboutus from "./components/aboutUs/aboutUs";
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div className="App">
-       <Header />
-      <Switch>
-        <Route path = "/login" exact component={Login}/>
-        <Route path = "/signup" exact component={SignUpMain}/>
-        <Route path = "/user" exact component={UserProfile}/>
-        <Route path ="/addJob" exact component={Add_Job} />
-        <Route path = "/Home" exact component={Home} />
-        <Route path = "/Home/:jobId" exact component={JobDetail} />
-        <Route path="/aboutUs" exact component={Aboutus} />
-        <Redirect to="/Home" />
-      </Switch>
-      <Footer /> 
-    </div>
-  );
-=======
 // const data = [
 //   {id: 0, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
 //   {id: 1, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
@@ -60,6 +41,7 @@ class App extends Component {
           <Route path ="/addJob" exact component={Add_Job} />
           <Route path = "/Home" exact component={Home} />
           <Route path = "/Job" exact component={JobDetail} />
+          <Route path = '/aboutUs'exact component={Aboutus} />
           <Redirect to="/Home" />
         </Switch>
         <Footer /> 
@@ -67,7 +49,6 @@ class App extends Component {
     );
   }
   
->>>>>>> f73827c1d80f540a6141340b5d51837ea171107d
 }
 
 export default App;
