@@ -10,14 +10,23 @@ import './home.css'
 import {connect} from "react-redux";
 import * as actions from "../../redux/actions/jobActions";
 
-import {SampleUser} from "../userProfile/sampleUser";
 
-class Home extends Component {
+class Marked extends Component {
 
     constructor(props){
         super(props);
+        // this.props.loadJobs();
         this.props.loadJobs();
+        this.props.fetchMarkedJobs("19103007", this.props.status)
     }
+
+    componentDidMount(){
+        
+    }
+
+    // componentDidUpdate(){
+    //     this.props.fetchMarkedJobs("19103007", "applied")
+    // }
 
 
     RenderMenuItem = (job)=>{
@@ -56,10 +65,10 @@ class Home extends Component {
     }
 
     renderCardList = ()=>{
-        let filterdJobs = this.props.JOBS.filter((job)=>{
-            return (SampleUser.preferences.includes(job.profile) && job.branches.includes(SampleUser.branch));
+        let filteredJobs = this.props.JOBS.filter((job)=>{
+            return this.props.statusJobs.includes(job.jobID)
         })
-        return filterdJobs.map((job) => {
+        return filteredJobs.map((job) => {
            
             return (
                 <div className="col-12 col-lg-3 col-md-6 col-sm-6 mt-1 mb-4"  key={job.jobID}>
@@ -76,10 +85,10 @@ class Home extends Component {
             <div>
                 <div className="container jobs">
                     <div className='row justify-content-center mt-3'>
-                        <h2 style={{textAlign: 'center', textShadow: '0 0 3px #FF0000'}}>ALL JOBS</h2>
+                        <h2 style={{textAlign: 'center', textShadow: '0 0 3px #FF0000'}}>{this.props.status} jobs</h2>
                     </div>
                     <div className="row  justify-content-center mt-4" >
-                        { this.props.JOBS && this.renderCardList()}
+                        { this.props.JOBS && this.props.statusJobs && this.renderCardList()}
                     </div>
                 </div>
             </div>
@@ -89,15 +98,17 @@ class Home extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-        JOBS : state.job.JOBS
+        JOBS : state.job.JOBS,
+        statusJobs : state.job.statusJobs
     }
 }
 
 const mapDispatchToProps = (dispatch)=>{
     return {
+        fetchMarkedJobs : (sid, status)=>dispatch(actions.fetchMarkedJobs(sid, status)),
         loadJobs : ()=>dispatch(actions.fetchAllJobs()),
         fetchJob : (jobID)=>dispatch(actions.fetchJob(jobID))
     }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )(Home);
+export default connect( mapStateToProps, mapDispatchToProps )(Marked);
