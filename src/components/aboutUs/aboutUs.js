@@ -5,6 +5,7 @@ import signupBG from '../../assets/addJob.jpg';
 import bhavesh from '../../assets/Bhavesh.jpeg';
 import shivam from '../../assets/shivam.png';
 import nisha from '../../assets/Nisha.jpeg';
+import {Link} from 'react-router-dom';
 import './aboutUs.css';
 import aboutUs from '../../assets/aboutUs.jpg';
 
@@ -31,13 +32,13 @@ const Aboutus = () => {
         <hr className="my-2" />
         <p>To have a wonderful experience about your placement process connect with us NOW!!.</p>
         <p className="lead">
-          <Button color="primary">Login</Button>
+          <Button color="primary" to="/login"><Link to="/Login"><b style={{color:'white'}}>Login</b></Link></Button>
         </p>
         </div>
       </Jumbotron>
       </div>
       <div className="row  justify-content-center mt-4" >
-      <Button style={{textAlign: 'center', textShadow: '0 0 3px',fontStyle:'initial',fontWeight:'bold',borderStyle:'ridge',background:'#0e76a8',color:'white',borderradius:'20px' ,height:'50px',width:'75%'}}><h3>Meet Our Developers Team</h3></Button>
+      <Button style={{textAlign: 'center',fontStyle:'initial',fontWeight:'bold',borderStyle:'ridge',background:'#0e76a8',color:'white',borderradius:'20px' ,height:'50px',width:'75%'}}><h3>Meet Our Developers Team</h3></Button>
       </div>
       <div className="row  justify-content-center mt-4" >
       <CardGroup>
@@ -58,8 +59,7 @@ const Aboutus = () => {
                 />
                 <Button
                   target="new"
-                  href="https://github.com/style={{background: '#0e76a8',
-                  borderradius: '100px'}}bhaveshkumarpassi"
+                  href="https://github.com/bhaveshkumarpassi"
                   variant="secondary"
                   className="col-2 fa fa-github git"
                   style={{background: 'rgb(243, 79, 79)',
@@ -96,7 +96,7 @@ const Aboutus = () => {
           <div className="row justify-content-between mt-5 mb-3">
                 <Button
                   target="new"
-                  href="https://www.linkedin.com/in/bhavesh-kumar-9ab7061b1/"
+                  href="https://www.linkedin.com/in/shivam-arora-911765191/"
                   className="col-2 fa fa-linkedin linked ml-2"
                   style={{background: '#0e76a8',
                   borderradius: '20px'}}
@@ -104,8 +104,7 @@ const Aboutus = () => {
                 />
                 <Button
                   target="new"
-                  href="https://github.com/style={{background: '#0e76a8',
-                  borderradius: '100px'}}bhaveshkumarpassi"
+                  href="https://github.com/shivam-arora-13"
                   variant="secondary"
                   className="col-2 fa fa-github git"
                   style={{background: 'rgb(243, 79, 79)',
@@ -113,14 +112,14 @@ const Aboutus = () => {
                 />
                 <Button
                   target="new"
-                  href="https://www.instagram.com/_bhavesh__kumar/"
+                  href="https://www.instagram.com/arora_shivam.me/"
                   className="col-2 fa fa-instagram insta"
                   style={{background: '#DD2A7B',
                   borderradius: '100px'}}
                 />
                 <Button
                   target="new"
-                  href="mailto:bkpassi2017@gmail.com"
+                  href="mailto:arorashivamme@gmail.com"
                   variant="success"
                   className="col-2 fa fa-envelope mail mr-2"
                   style={{
@@ -142,7 +141,7 @@ const Aboutus = () => {
           <div className="row justify-content-between mt-5 mb-3">
                 <Button
                   target="new"
-                  href="https://www.linkedin.com/in/bhavesh-kumar-9ab7061b1/"
+                  href="https://www.linkedin.com/in/nisha-270102/"
                   className="col-2 fa fa-linkedin linked ml-2"
                   style={{background: '#0e76a8',
                   borderradius: '20px'}}
@@ -150,8 +149,7 @@ const Aboutus = () => {
                 />
                 <Button
                   target="new"
-                  href="https://github.com/style={{background: '#0e76a8',
-                  borderradius: '100px'}}bhaveshkumarpassi"
+                  href="https://github.com/Nisha2701"
                   variant="secondary"
                   className="col-2 fa fa-github git"
                   style={{background: 'rgb(243, 79, 79)',
@@ -159,14 +157,14 @@ const Aboutus = () => {
                 />
                 <Button
                   target="new"
-                  href="https://www.instagram.com/_bhavesh__kumar/"
+                  href="https://www.instagram.com/nishaa_2702/"
                   className="col-2 fa fa-instagram insta"
                   style={{background: '#DD2A7B',
                   borderradius: '100px'}}
                 />
                 <Button
                   target="new"
-                  href="mailto:bkpassi2017@gmail.com"
+                  href="mailto:sky4189986@gmail.com"
                   variant="success"
                   className="col-2 fa fa-envelope mail mr-2"
                   style={{
