@@ -1,12 +1,44 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import {Container, Row, Col, Image, Navbar,Nav, NavDropdown} from 'react-bootstrap';
+import { auth } from '../../firebase/firebase';
 import Logo from '../../images/Logo_1.png';
 import {AiFillHome} from 'react-icons/ai';
 import './header_footer.css';
 
 
 class header extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.state={
+            isAuthenticated: false,
+            user: null,
+        }
+    }
+
+    componentDidMount(){
+        this.unsubscribe =  auth.onAuthStateChanged(user => {
+    
+            if(user) {
+              this.setState({
+                isAuthenticated: true,
+                user: user
+              })
+            }
+            else {
+              this.setState({
+                isAuthenticated: false,
+              })
+            }
+        })
+    }
+
+    componentWillUnmount(){
+        this.unsubscribe();
+    }
+
     render() {
         return (
             <div className="header__section">
@@ -30,7 +62,11 @@ class header extends Component {
 
                         <Nav className="ml-auto RightNav">
                             {/* if user is logged in then we willshow only this */}
-                            <button to="/register" className="navbar-link" ><span className="NavBarLink"><span className="fa fa-sign-in fa-lg">Login</span></span></button>
+                            {!this.state.isAuthenticated ?
+                                <Link to="/login" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-sign-in fa-lg mr-2"></span>LOGIN</span></Link>
+                                :
+                                <Link to="/login" className="navbar-link mr-4" style={{textDecoration: 'none', fontWeight: "bold"}}><span className="NavBarLink"><span class="fa fa-sign-out fa-lg mr-2"></span>LOGOUT</span></Link>
+                            }
                             {/* otherwise */}
                             
                         </Nav>
