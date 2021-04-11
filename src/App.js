@@ -10,7 +10,7 @@ import JobDetail from './components/job/job';
 import Candidate from './components/applied_candidates/candidates';
 import Add_Job from "./components/add_job_form/add_job_form";
 import Aboutus from "./components/aboutUs/aboutUs";
-
+import Marked from "./components/home/marked";
 
 class App extends Component {
 
@@ -29,9 +29,9 @@ class App extends Component {
           <Route path = "/signup" exact component={SignUpMain}/>
           <Route path = "/user" exact component={UserProfile}/>
           <Route path ="/addJob" exact component={Add_Job} />
-          <Route path = "/Home" exact render={()=><Home heading="All JOB OPENINGS"/>} />
-          <Route path = "/applied" exact render={()=><Home heading="APPLIED JOBS"/>} />
-          <Route path = "/interested" exact render={()=><Home heading="INTERESTED JOBS"/>} />
+          <Route path = "/Home" exact render={()=><Home/>} />
+          <Route path = "/applied" exact render={()=><Marked status="applied"/>} />
+          <Route path = "/interested" exact render={()=><Marked status="interested"/>} />
           <Route path = "/Job" exact component={JobDetail} />
           <Route path = "/Applied-Candidates" exact component={Candidate} />
           <Route path = '/aboutUs' exact component={Aboutus} />

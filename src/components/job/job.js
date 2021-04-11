@@ -1,117 +1,24 @@
 import React, {Component} from 'react';
-import { Card, Button, Media, FormGroup, Label, Input, CardHeader, CardFooter, Jumbotron,
+import { Card, Button,CardHeader, CardFooter,
     CardBody, CardSubtitle, CardText, ButtonGroup} from 'reactstrap';
-import profile_pic from '../../images/profile_pic.png';
-import { LocalForm, Control, Errors } from "react-redux-form";
 import './job.css'
 
 import {connect} from "react-redux";
+import * as actions from "../../redux/actions/jobActions";
 
-// const data = [
-//     {id: 0, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 1, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 2, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 3, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd. qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 4, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 5, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 6, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
-//     {id: 7, company_name: "Microsoft", Profile: "Software Developer", category: "Full Time", CTC: "150k", branch: ["CSE", "ECE", "EE"], cgpa: 8, description: "qwretrry tutu ff irjifj .eru , kjejrf nvb eko mf j  owoeioi wej ekd ojd."},
+import RenderComments from "./queries";
 
-// ]
 
-// const comments = [
-//     {_id: 0, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
-//     {_id: 1, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
-//     {_id: 2, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
-//     {_id: 3, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
-//     {_id: 4, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
-//     {_id: 5, comment: "This is comment. This is comment. This is comment. This is comment.", author: "Bhavesh Kumar"},
-
-// ];
-
-const RenderComments = () => {
-
-    return(
-
-        <div style={{marginLeft: '3%', marginRight: '3%'}}>
-            <LocalForm >
-                <div className="row form-group">
-                    <Label htmlFor="comment" className="col-12">
-                    <span className="fa fa-lg  fa-pencil-square-o ml-1 mr-2"></span>
-                        Post Query
-                    </Label>
-                    <div className="col-12">
-                    <Control.textarea
-                        model=".comment"
-                        name="comment"
-                        className="form-control"
-                        id="comment"
-                        rows="3"
-                        placeholder={"Type your query here ...."}
-                    />
-                    <Errors
-                        className="text-danger"
-                        show="touched"
-                        model=".comment"
-                        messages={{
-                        required: "Required",
-                        maxLength: "Must be 500 characters or less",
-                        }}
-                    />
-                    </div>
-                </div>
-                <div className="row form-group">
-                    <div className="col-12">
-                    <Button type="submit" style={{backgroundColor: '#FE5F55'}}>
-                        Submit
-                    </Button>
-                    </div>
-                </div>
-            </LocalForm>
-            {/* <ul className="ml-2 list-unstyled mr-2">
-                {comments.map((comm) => {
-                    return (
-                        <li key={comm._id}>
-                            <Media className="row mt-4">
-                            <Media left className="mr-0 col-4 col-md-3">
-                                <Media
-                                object
-                                className="comments-profile-pic ml-0 "
-                                src={profile_pic}
-                                alt={comm.author}
-                                />
-                                <br />
-                                <p className='comments-data'>
-                                    <b>{comm.author}</b><br/>
-                                    at {"01-04-2021"}
-                                </p>
-                            </Media>
-                            <Media className="comment mr-0 col-8 col-md-9" body>
-                                {comm.comment}
-                            </Media>
-                            <Media>
-                                <Button
-                                    color="danger"
-                                    style={{backgroundColor: '#ec524b'}}
-                                    //onClick={() => deleteComment(comm._id)}
-                                >
-                                    <span className="fa fa-trash"></span>
-                                </Button>
-                            </Media>
-                            </Media>
-                            <hr />
-                        </li>
-                    )})}    
-            </ul> */}
-        </div>
-    )
-}
 
 class JobDetail extends Component {
 
     constructor(props){
         super(props);
     }
+
+
+
+
 
     RenderJobDetail = (job)=>{
 
@@ -167,8 +74,12 @@ class JobDetail extends Component {
                 
                 <div className='row justify-content-center'>
                     <ButtonGroup>
-                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}}><span className='fa fa-lg fa-pencil-square mr-2 ml-2' />APPLY</Button>
-                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}}><span className='fa fa-lg fa-bookmark mr-2 ml-2' />SAVE</Button>
+                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}} onClick={()=>{
+                            this.props.markJob(this.props.job.jobID, "19103007", "applied")
+                        }} ><span className='fa fa-lg fa-pencil-square mr-2 ml-2' />APPLY</Button>
+                        <Button className='mt-3' style={{backgroundColor: '#ec524b'}} onClick={()=>{
+                            this.props.markJob(this.props.job.jobID, "19103007", "interested")
+                        }}><span className='fa fa-lg fa-bookmark mr-2 ml-2' />SAVE</Button>
                     </ButtonGroup>
                 </div>
             </CardBody>
@@ -186,6 +97,7 @@ class JobDetail extends Component {
 
                 <div className="jobs mt-5" style={{marginLeft: '5%', marginRight: '5%'}}>
                                                 {this.renderabc}
+                        {/* <PECAlert alertText = "APPLIED TO THE JOB" /> */}
                     <div className="row mt-4" >
                         <div className='col-md-7 mb-5'>
                             { this.props.job && this.RenderJobDetail(this.props.job)} 
@@ -200,7 +112,7 @@ class JobDetail extends Component {
                                 </h3>
                             </div>
                             <div className='queryMain' style={{backgroundColor: '#f0fff3'}}>
-                                <RenderComments/>
+                                {this.props.job && <RenderComments jobID = {this.props.job.jobID} />}
                             </div>
                         </div>
                     </div>
@@ -212,12 +124,17 @@ class JobDetail extends Component {
 
 const mapStateToProps = (state)=>{
     return{
-        job : state.job.job
+        job : state.job.job,
+        queries : state.job.queries,
     }
 }
 
 const mapDispatchToProps = (dispatch)=>{
-    return{}
+    return{
+        addQuery : (jobID, person, queryText)=>dispatch(actions.addQuery(jobID, person, queryText)),
+        fetchQueries : (jobID)=>dispatch(actions.fetchQueries(jobID)),
+        markJob : (jobID, sid, status)=>dispatch(actions.markJob(jobID, sid, status))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(JobDetail);
