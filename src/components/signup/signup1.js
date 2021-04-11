@@ -5,6 +5,8 @@ import user from "../../assets/user.png";
 
 
 const SignUp1 = ({signupCred, onChangeHandler})=>{
+
+
     return <div className="SignUp1Div"> <Row form>
     <Col lg={8}>
         <FormGroup>
