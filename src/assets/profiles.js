@@ -1,7 +1,6 @@
 export const Profiles = [
     "Finance", "Operations", "Software Developer", "Data Science", 
     "Aerospace Engineering",
-"Applied Sciences Core",
 "Civil Engineering Core",
 "Electrical Engineering Core",
 "ECE Core",
@@ -9,3 +8,18 @@ export const Profiles = [
 "Metallurgical Engineering Core",
 "Production Engineering Core"
 ];
+
+
+export const profileImages = {
+    "Finance" : ,
+    "Operations" : ,
+    "Software Developer" : ,
+    "Data Science" : ,
+    "Aerospace Engineering" : ,
+    "Civil Engineering Core" : ,
+    "Electrical Engineering Core" : ,
+    "ECE Core" : ,
+    "Mechanical Core" : ,
+    "Metallurgical Engineering Core" : ,
+    "Production Engineering Core" : 
+};

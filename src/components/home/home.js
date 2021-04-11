@@ -57,7 +57,8 @@ class Home extends Component {
 
     renderCardList = ()=>{
         let filterdJobs = this.props.JOBS.filter((job)=>{
-            return (SampleUser.preferences.includes(job.profile) && job.branches.includes(SampleUser.branch));
+            return (SampleUser.preferences.includes(job.profile) && job.branches.includes(SampleUser.branch) && SampleUser.cgpa >= job.cgpa );
+            
         })
         return filterdJobs.map((job) => {
            
