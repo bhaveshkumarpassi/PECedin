@@ -1,4 +1,4 @@
-import { actions } from "react-redux-form";
+
 import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
@@ -12,7 +12,9 @@ const initialState = {
     // timeline : [],
     job : null,
     showAlert : false,
-    JOBS : null
+    JOBS : null,
+    queries : null,
+    statusJobs : null
 }
 
 export const JobReducer = (state = initialState, action)=>{
@@ -22,10 +24,14 @@ export const JobReducer = (state = initialState, action)=>{
         case actionTypes.HIDE_ALERT :
             return {...state, showAlert : false}
         case actionTypes.LOAD_JOBS :
-            console.log("hello")
+            console.log(action.JOBS)
             return {...state, JOBS : action.JOBS}
         case actionTypes.LOAD_CHOSEN_JOB :
             return {...state, job : action.job}
+        case actionTypes.LOAD_QUERIES :
+            return {...state, queries : action.queries}
+        case actionTypes.LOAD_STATUS_JOBS :
+            return {...state, statusJobs : action.JOBS}
         default : return state;
     }
 }

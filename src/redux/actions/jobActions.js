@@ -48,19 +48,6 @@ export const fetchJob = (id)=>{
     }
 }
 
-export const fetchQueries = (jobID)=>{
-    return dispatch =>{
-        firestore.collection("queries").where("jobID" , "==", jobID).get()
-        .then((queries)=>{
-            queries.forEach((query)=>{
-                console.log(query.data())
-            })
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
-    }
-}
 
 export const addQuery = (jobID, person, queryText)=>{
     return dispatch =>{
@@ -77,6 +64,23 @@ export const addQuery = (jobID, person, queryText)=>{
     }
 }
 
+export const fetchQueries = (jobID)=>{
+    return dispatch =>{
+        firestore.collection("queries").where("jobID" , "==", jobID).get()
+        .then((queries)=>{
+            let querie = [];
+            queries.forEach((query)=>{
+                console.log(query.data())
+                querie.push({...query.data(), queryID : query.id});
+            })
+            dispatch({type : actionTypes.LOAD_QUERIES, queries : querie})
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+}
+
 export const markJob = (jobID, sid,status)=>{
     return dispatch =>{
         firestore.collection("saved").add({
@@ -85,6 +89,7 @@ export const markJob = (jobID, sid,status)=>{
             status : status
         }).then((res)=>{
             console.log(res.id)
+            alert("Job marked " + status)
         })
         .catch((err)=>{
             console.log(err)
@@ -95,17 +100,26 @@ export const markJob = (jobID, sid,status)=>{
 export const fetchMarkedJobs = (sid, status)=>{
     return dispatch => {
         firestore.collection("saved").where("sid", "==", sid).where("status", "==", status).get()
-        .then((docs)=>{
-            let jobs = [];
-            docs.forEach((doc)=>{
+        .then((marks)=>{
+            let JOBS = [];
+            marks.forEach((mark)=>{
 
+                // firestore.collection("jobs").doc(mark.data().jobID).get()
+                // .then((job)=>{
+                //     JOBS.push({...job.data(), jobID : job.id})
+                //     console.log({...job.data(), jobID : job.id})
+                // })
+                JOBS.push(mark.data().jobID)
             })
+            dispatch({type : actionTypes.LOAD_STATUS_JOBS, JOBS : JOBS})
+           
         })
         .catch((err)=>{
             console.log(err)
         })
     }
 }
+
 
 
 
