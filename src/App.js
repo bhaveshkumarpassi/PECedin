@@ -35,7 +35,7 @@ class App extends Component {
           <Route path = "/Job" exact component={JobDetail} />
           <Route path = "/Applied-Candidates" exact component={Candidate} />
           <Route path = '/aboutUs' exact component={Aboutus} />
-          <Redirect to="/Home" />
+          <Redirect to="/login" />
         </Switch>
         <Footer /> 
       </div>

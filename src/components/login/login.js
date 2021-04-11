@@ -1,12 +1,22 @@
 import React, {useState} from "react";
 import {Row, Col, FormGroup, Form, Input, Button, Label} from "reactstrap";
 import {NavLink} from "react-router-dom";
+import {connect} from 'react-redux';
+import {loginUser} from '../../redux/actions/auth';
 import "./login.css";
 import loginBG from "../../assets/loginBG.jpg";
 import LoginCorousel from  "./loginCorousel";
 // import signupBG from "../../assets/signupBG.jpg";
 
-const Login = ()=>{
+
+const mapDispatchToProps = dispatch => {
+    
+    return {
+        loginUser: (email, pass) => dispatch(loginUser(email, pass))
+    };
+}
+
+const Login = (props)=>{
 
     const [loginCred, setLoginCred] = useState({
         sid : "",
@@ -35,7 +45,7 @@ const Login = ()=>{
             <Row><div className="LoginDiv">
                 <Form>
                     <FormGroup>
-                        <Label for="sid">SID</Label>
+                        <Label for="sid">EMAIL</Label>
                         <Input id="sid" type="text" name="sid" value={loginCred.sid} onChange={onChangeHandler}/>
                         <Label for="password">Password</Label>
                         <Input id="password" type="password" name="password" value={loginCred.password} onChange={onChangeHandler}/>
@@ -49,7 +59,8 @@ const Login = ()=>{
                 <Button style={{
                     background : "#495867",
                 }} onClick={()=>{
-                    console.log(loginCred)
+                    props.loginUser(loginCred.sid, loginCred.password);
+
                 }} >Login</Button>
                 </div></Row>
             <Row><div className="LoginDiv2"><center>Don't have an account? <NavLink to="/signup" className="LoginDiv2Navlink" >Sign up</NavLink></center></div></Row>
@@ -58,4 +69,4 @@ const Login = ()=>{
     </div>
 }
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);
