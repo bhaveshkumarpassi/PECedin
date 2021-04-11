@@ -1,4 +1,4 @@
-import * as ActionTypes from './ActionTypes';
+import * as ActionTypes from '../actions/actionTypes';
 
 export const users = (state = {
         isLoading: true,

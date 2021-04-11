@@ -50,8 +50,6 @@ const SignUpMain = (props)=>{
     const clickHandler = async ()=>{
         changeStage((prevStage)=>!prevStage);
 
-        alert(JSON.stringify(signupCred))
-
         if(stage===false){
             await props.registerUser(signupCred);
         }

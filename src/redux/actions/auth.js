@@ -86,7 +86,7 @@ export const registerUser = (creds) => (dispatch) => {
     });
 }
 
-/*export const loginRequest = () => {
+export const loginRequest = () => {
 return {
 type: ActionTypes.LOGIN_REQUEST
 }
@@ -106,7 +106,7 @@ message
 }
 };
 
-export const loginUser = (email, password, navigation) => (dispatch) => {
+export const loginUser = (email, password) => (dispatch) => {
 
 dispatch(loginRequest());
 
@@ -115,10 +115,10 @@ return auth.signInWithEmailAndPassword(email, password)
 
 var user = auth.currentUser;
 dispatch(loginSuccess(user));
-navigation.navigate('Home');
+alert('Login Successful!')
 })
 .catch((error) => {
-Alert.alert('Login UnSuccessful!!', error.message);
+alert('Login UnSuccessful!! \n'+error.message);
 dispatch(loginFailure(error.message));
 });
 }
@@ -143,15 +143,15 @@ message
 }
 
 // Logs the user out
-export const logoutUser = (navigation) => (dispatch) => {
+export const logoutUser = () => (dispatch) => {
 dispatch(requestLogout());
 
 return auth.signOut().then(() => {
 dispatch(logoutSuccess());
-navigation.navigate('Home');
+alert('Logout Successful!');
 }).catch((error) => {
-Alert.alert('Logout Unsuccessful!!', error.message);
+alert('Logout Unsuccessful!! \n'+error.message);
 dispatch(logoutFailure(error.message));
 });
 
-}*/
+}

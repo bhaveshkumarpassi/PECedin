@@ -7,9 +7,17 @@ import {IoAddOutline} from "react-icons/io5";
 import jobFormBG from "../../assets/jobFormBG.jpg";
 import {connect} from "react-redux";
 import * as jobActions from "../../redux/actions/jobActions";
+import * as actionTypes from "../../redux/actions/actionTypes";
+import PECAlert from "../pecAlert/pecAlert";
 
 
 const Add_Job = (props)=>{
+
+    if(props.showAlert){
+        setTimeout(()=>{
+            props.hideAlert()
+        },5000);
+    }
 
     const [job, setJob] = useState({
         companyName : "",
@@ -90,6 +98,7 @@ const Add_Job = (props)=>{
         backgroundSize : "cover",
         padding : "5% 10% 5% 10%"
     }} >
+        { props.showAlert && <PECAlert alertText = "JOB ADDED SUCCESSFULLY"/>}
         <div className="jobFormDiv">
         <Row form>
             <Col lg="6">
@@ -99,7 +108,7 @@ const Add_Job = (props)=>{
             </Col>
             <Col lg="6">
             <Label for="profile" className="JobLabel">Select Profile</Label>
-        <Input type="select" id="profile" name="profile" onChange={changeHandler}>
+        <Input type="select" id="profile" name="profile"  onChange={changeHandler}>
         {Profiles.map((profile, index)=>{
           return <option key={index} >{profile}</option>
       })}</Input>
@@ -160,15 +169,24 @@ const Add_Job = (props)=>{
           console.log(job)
           props.addJob(job);
       }} >ADD JOB</Button>
+      
       </div>
+      
     </div>
+}
+
+const mapStateToProps = (state)=>{
+    return{
+        showAlert : state.job.showAlert
+    }
 }
 
 const mapDispatchToProps = (dispatch)=>{
     return {
-        addJob : (job)=>dispatch(jobActions.addJob(job))
+        addJob : (job)=>dispatch(jobActions.addJob(job)),
+        hideAlert : ()=>dispatch({type : actionTypes.HIDE_ALERT})
     }
 }
 
 
-export default connect(null, mapDispatchToProps)(Add_Job);
+export default connect(mapStateToProps, mapDispatchToProps)(Add_Job);
