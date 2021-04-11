@@ -1,33 +1,34 @@
 import React,{Component} from 'react';
-import {FaFacebookSquare,FaTwitterSquare,FaLinkedin, FaInstagram} from 'react-icons/fa';
+import {FaFacebook,FaTwitterSquare,FaLinkedin, FaInstagram} from 'react-icons/fa';
 import {Container, Row, Col} from 'react-bootstrap';
 import './header_footer.css';
 class footer extends Component{
     render(){
         return(
-        <div>
+            
+
+        <div >
             <footer>
                 <div className="footerSection">
                     <Container>
-                        <div className="footerSectionInner">
-                            <Row>
-                            <Col md={6} className="footerColumnicons">
-                            <div className="footerHeading" >Get Social With Us</div>
-                            <div className  = "footerContent" style={{textAlign:'center'}}>
-                                <h2>Thanks for connecting.</h2>
-                                <a href ="#" className ="social_links"><span className= "social_icons facebook"><FaFacebookSquare/></span> Facebook</a>
-                                <a href ="#" className ="social_links"><span className= "social_icons linkedIn"><FaLinkedin/></span>LinkedIn</a>
-                                <a href ="#" className ="social_links"><span className= "social_icons twitter"><FaTwitterSquare/></span> Twitter</a>
-                                <a href="#" className="social_links"><span className="social_icons instagram"><FaInstagram></FaInstagram></span>Instagram</a>
-                            </div>
-                            </Col>
-                            </Row>
-                            <br/>
-                            <hr></hr>
-                            <br/>
-                            <p>&#169;	2020. All rights Reserved.</p>
-                        </div>    
-                    </Container>
+                  <Row className="justify-content-md-center sharing-area text-center">
+                    <Col className="text-center" lg="8" md="12">
+                    <a href ="#" className ="social_links"><span className= "social_icons facebook"><FaFacebook/></span></a>
+                    <a href ="#" className ="social_links"><span className= "social_icons linkedIn"><FaLinkedin/></span></a>
+                    <a href ="#" className ="social_links"><span className= "social_icons twitter"><FaTwitterSquare/></span></a>
+                    <a href="#" className="social_links"><span className="social_icons instagram fill"><FaInstagram></FaInstagram></span></a> 
+                    </Col>
+                  </Row>  
+                  <Row className="justify-content-md-center sharing-area text-center" >
+                  <nav>
+            <p className="copyright text-center" style={{fontWeight:'bold'}}>
+              © {new Date().getFullYear()}{" "}
+              <a href="#">PECedIn</a>, made with
+              love for a better web
+            </p>
+          </nav>
+                  </Row>  
+                </Container>
                 </div>
             </footer>
         </div>

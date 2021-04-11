@@ -141,9 +141,8 @@ footer{
 
 .footerSection
 {   
-    background-color:#f0f3f5;
-    background-color : #f9f9f9; 
-    color:#bbb;
+    background-color:#dfe3e6; 
+    color:#0c151d;
     /* color:#5e5e5e;
    color: #3aa6d1; */
     padding:2rem;
@@ -152,6 +151,9 @@ footer{
     text-align: center;
     
     
+}
+.text-center{
+    text-align: center!important;
 }
 .footerSectionInner{
     margin-top:2rem;
@@ -216,18 +218,21 @@ padding-right:15px;
     color:#3b5998 ;
 }
 .linkedIn{
-    color: #0e76a8
+    color: #07a9f5
 }
 .twitter{
     color:#00acee;
 }
 .instagram{
-    color:#00acee ;
+    color:#d42acc ;
+}
+
+.fill{
+    background-color: #d9e4dd;
 }
 
 .social_icons svg{
     background-color: rgb(218, 227, 230);
-    box-shadow: #aaa 1.5px -1.5px;
 }
 
 .footerContent{

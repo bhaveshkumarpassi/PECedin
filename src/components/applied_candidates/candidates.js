@@ -43,7 +43,7 @@ class Candidate extends Component {
                    </Card.Subtitle>
                    <Card.Subtitle tag="h6" className="mb-2 mt-2 text-muted">
                     <span className='fa fa-star fa-lg mr-3 company-icon'/> 
-                    <b className='ml-1'>STUDENT GRADES --  </b>
+                    <b className='ml-1'>CGPA --  </b>
                       10
                    </Card.Subtitle>
                    <Card.Subtitle tag="h6" className="mb-2 mt-2 text-muted">
@@ -79,7 +79,7 @@ class Candidate extends Component {
                    </Card.Subtitle>
                    <Card.Subtitle tag="h6" className="mb-2 mt-2 text-muted">
                     <span className='fa fa-star fa-lg mr-3 company-icon'/> 
-                    <b className='ml-1'>STUDENT GRADES --  </b>
+                    <b className='ml-1'>CGPA --  </b>
                       10
                    </Card.Subtitle>
                    <Card.Subtitle tag="h6" className="mb-2 mt-2 text-muted">
@@ -113,7 +113,7 @@ class Candidate extends Component {
                    </Card.Subtitle>
                    <Card.Subtitle tag="h6" className="mb-2 mt-2 text-muted">
                     <span className='fa fa-star fa-lg mr-3 company-icon'/> 
-                    <b className='ml-1'>STUDENT GRADES --  </b>
+                    <b className='ml-1'>CGPA --  </b>
                       10
                    </Card.Subtitle>
                    <Card.Subtitle tag="h6" className="mb-2 mt-2 text-muted">
