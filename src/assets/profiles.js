@@ -1,4 +1,4 @@
-import './profileImg';
+//import './profileImg';
 export const Profiles = [
     "Finance", "Operations", "Software Developer", "Data Science", 
     "Aerospace Engineering",
